@@ -1,0 +1,20 @@
+{
+  "name": "pokemon-tcg-sdk-typescript",
+  "version": "0.0.1",
+  "description": "Typescript SDK for the PokemonTCG API (https://api.pokemontcg.io)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "PokemonTCG",
+    "Typescript",
+    "API",
+    "SDK"
+  ],
+  "author": "Bradyn Glines",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.17.1"
+  }
+}

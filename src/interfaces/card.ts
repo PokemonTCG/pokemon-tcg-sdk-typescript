@@ -29,9 +29,4 @@ export interface ICard {
   nationalPokedexNumber: number;
   ancientTrait: string;
   evolvesFrom: string;
-
-  resource(): string;
-  find(id: number): ICard;
-  all(): ICard[];
-  where(args: object): ICard;
 }

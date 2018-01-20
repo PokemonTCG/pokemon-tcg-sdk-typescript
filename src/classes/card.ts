@@ -6,6 +6,7 @@ import { ISet } from '../interfaces/set';
 import { IType } from '../interfaces/type';
 import { IAttack } from '../interfaces/attack';
 import { QueryBuilder } from '../queryBuilder';
+import { IQuery } from '../interfaces/query';
 
 export class Card implements ICard {
   id: number;
@@ -34,19 +35,28 @@ export class Card implements ICard {
 
   constructor() {}
   
-  static resource(): string {
+  resource(): string {
     return 'cards';
   }
 
-  find(id: string): Card {
-    return QueryBuilder.find<Card>(id);
+  static find(id: string): Promise<Card> {
+    return QueryBuilder.find(this, id)
+      .then(response => {
+        return response;
+      });
   }
 
-  all(): ICard[] {
-    throw new Error("Method not implemented.");
+  static all(): Promise<Card[]> {
+    return QueryBuilder.all(this)
+      .then(response => {
+        return response;
+      });
   }
 
-  where(args: object): ICard {
-    throw new Error("Method not implemented.");
+  static where(params: IQuery[]): Promise<Card[]> {
+    return QueryBuilder.where(this, params)
+      .then(response => {
+        return response;
+      });
   }
 }

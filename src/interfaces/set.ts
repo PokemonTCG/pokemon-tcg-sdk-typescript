@@ -8,9 +8,4 @@ export interface ISet {
   releaseDate: string;
   symbolUrl: string;
   ptcgoCode: string;
-
-  resource(): string;
-  find(id:  number): ISet;
-  all(): ISet[];
-  where(args: object): ISet;
 }

@@ -1,4 +1,6 @@
 import { ISet } from '../interfaces/set';
+import { QueryBuilder } from '../queryBuilder';
+import { IQuery } from '../interfaces/query';
 
 export class Set implements ISet {
   code: string;
@@ -14,19 +16,28 @@ export class Set implements ISet {
   constructor() {}
 
   resource(): string {
-    return "sets";
+    return 'sets';
   }
 
-  find(id: number): ISet {
-    throw new Error("Method not implemented.");
+  static find(id: string): Promise<Set> {
+    return QueryBuilder.find(this, id)
+      .then(response => {
+        return response;
+      });
   }
 
-  all(): ISet[] {
-    throw new Error("Method not implemented.");
+  static all(): Promise<Set[]> {
+    return QueryBuilder.all(this)
+      .then(response => {
+        return response;
+      });
   }
 
-  where(args: object): ISet {
-    throw new Error("Method not implemented.");
+  static where(params: IQuery[]): Promise<Set[]> {
+    return QueryBuilder.where(this, params)
+      .then(response => {
+        return response;
+      });
   }
   
 }

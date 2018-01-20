@@ -2,7 +2,8 @@
   "name": "pokemon-tcg-sdk-typescript",
   "version": "0.0.1",
   "description": "Typescript SDK for the PokemonTCG API (https://api.pokemontcg.io)",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,6 +16,7 @@
   "author": "Bradyn Glines",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.17.1"
+    "axios": "^0.17.1",
+    "typescript": "^2.6.2"
   }
 }

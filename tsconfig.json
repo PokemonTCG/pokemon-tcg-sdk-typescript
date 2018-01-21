@@ -3,9 +3,11 @@
     "module": "commonjs",
     "target": "es5",
     "declaration": true,
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "sourceMap": true,
+    "experimentalDecorators": true
   },
   "include": [
-    "src/**/*"
+    "src/**/*.ts"
   ]
 }

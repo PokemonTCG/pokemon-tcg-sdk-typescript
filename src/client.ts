@@ -11,7 +11,7 @@ export class Client {
   static apiUrl: string = `${PokemonTCG.API_URL}/v${PokemonTCG.version}`;
 
   static get(resource: string, params?: IQuery[]): Promise<any> {
-    let url: string = `${Client.apiUrl}/${resource}`;
+    let url: string = `${this.apiUrl}/${resource}`;
     let config: axios.AxiosRequestConfig = {
       headers: {
         'Content-Type': 'application/json'
@@ -20,20 +20,20 @@ export class Client {
 
     // This is needed because the /sets endpoint doesn't take
     // an id as a parameter so we need to append it to the url
-    url += this.checkForId(params);
+    url += this.checkForId(resource, params);
 
-    return axios.default.get<any>(`${this.apiUrl}/${resource}?${this.paramsToQuery(params)}`, config)
+    return axios.default.get<any>(`${url}?${this.paramsToQuery(params)}`, config)
       .then(response => {
         return response.data[Object.keys(response.data)[0]];
       })
   }
 
-  private static checkForId(params?: IQuery[]): string {
+  private static checkForId(resource: string, params?: IQuery[]): string {
     let url: string = '';
 
     if (params) {
       params.map(param => {
-        if (param.name === 'id') {
+        if (resource === 'sets' && param.name === 'id') {
           url = `/${param.value}`;
         }
       });

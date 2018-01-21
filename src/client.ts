@@ -45,7 +45,7 @@ export class Client {
   private static paramsToQuery(params?: IQuery[]): string {
     let query: string = '';
 
-    if (params !== null) {
+    if (params) {
       params.map((q: IQuery) => {
         query += `${q.name}=${encodeURI(q.value.toString())}`.concat('&');
       });

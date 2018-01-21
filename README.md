@@ -120,6 +120,6 @@ Card.all()
  * Push to the branch (git push origin my-new-feature)
  * Create a new Pull Request
 
- ## TODO
-  * Add testing
-  * Change package name?
+## TODO
+* Add testing
+* Change package name?

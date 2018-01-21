@@ -119,3 +119,7 @@ Card.all()
  * Commit your changes (git commit -am 'Add some feature')
  * Push to the branch (git push origin my-new-feature)
  * Create a new Pull Request
+
+ ## TODO
+  * Add testing
+  * Change package name?

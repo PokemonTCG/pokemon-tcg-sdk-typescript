@@ -121,5 +121,5 @@ Card.all()
  * Create a new Pull Request
 
 ## TODO
-* Add testing
-* Change package name?
+* Add more testing?
+* Update package name for easier use?

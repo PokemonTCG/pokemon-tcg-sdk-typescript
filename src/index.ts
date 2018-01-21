@@ -20,11 +20,13 @@ export namespace PokemonTCG {
   export type IAttack = BaseIAttack;
   export type IAncientAbility = BaseIAncientAbility;
   export type IAbility = BaseIAbility;
-  export type IQuery = BaseIQuery;
+  // export type IQuery = BaseIQuery;
   export type ISet = BaseISet;
   export type ISuperType = BaseISuperType;
   export type ISubType = BaseISubType;
   export type IType = BaseIType;
+
+  export interface IQuery extends BaseIQuery {}
 
   export const Card = BaseCard;
   export type Card = BaseCard;

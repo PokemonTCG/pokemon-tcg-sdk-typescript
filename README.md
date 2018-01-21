@@ -85,9 +85,9 @@ SubType.all(): Promise<SubType[]>
 All of the calls return generic promises like `Promise<T>` or `Promise<T[]>`. The type is determined from the class making the call. The examples here are using the `Card` class but the usage for the other classes are the same.
 
 ```typescript
-import { Card, Set, Type, SuperType, SubType, IQuery } from 'pokemon-tcg-sdk-typescript'
+import { PokemonTCG } from 'pokemon-tcg-sdk-typescript'
 
-Card.find('xy1')
+PokemonTCG.Card.find('xy1')
   .then(card => {
     // do stuff with the card
   })
@@ -95,8 +95,8 @@ Card.find('xy1')
     // do something with the error
   });
 
-let params: IQuery[] = [{ name: 'name', value: 'Charizard' }];
-Card.where(params)
+let params: PokemonTCG.IQuery[] = [{ name: 'name', value: 'Charizard' }];
+PokemonTCG.Card.where(params)
   .then(cards => {
     // do stuff with the cards
   })
@@ -104,7 +104,7 @@ Card.where(params)
     // do something with the error
   });
 
-Card.all()
+PokemonTCG.Card.all()
   .then(cards => {
     // do stuff with the cards
   })

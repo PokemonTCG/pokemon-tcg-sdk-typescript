@@ -1,3 +1,3 @@
 export interface ISuperType {
-  types: string[];
+  type: string;
 }

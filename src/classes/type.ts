@@ -1,8 +1,8 @@
 import { IType } from '../interfaces/type';
+import { QueryBuilder } from '../queryBuilder';
 
 export class Type implements IType {
   type: string;
-  value: string;
 
   constructor() {}
 
@@ -10,7 +10,10 @@ export class Type implements IType {
     return 'types';
   }
 
-  all(): IType[] {
-    throw new Error("Method not implemented.");
+  static all(): Promise<Type[]> {
+    return QueryBuilder.all(this)
+      .then(response => {
+        return response;
+      });
   } 
 }

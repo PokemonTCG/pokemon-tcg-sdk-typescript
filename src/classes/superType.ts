@@ -2,7 +2,7 @@ import { ISuperType } from '../interfaces/superType';
 import { QueryBuilder } from '../queryBuilder';
 
 export class SuperType implements ISuperType {
-  types: string[];
+  type: string;
 
   constructor () {}
 

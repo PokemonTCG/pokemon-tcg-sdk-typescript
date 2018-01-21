@@ -1,3 +1,3 @@
 export interface ISubType {
-  types: string[];
+  type: string;
 }

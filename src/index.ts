@@ -7,26 +7,11 @@ import { SubType as BaseSubType } from './classes/subType';
 import { SuperType as BaseSuperType } from './classes/superType';
 import { Type as BaseType } from './classes/type';
 
-import { IAttack as BaseIAttack } from './interfaces/attack';
-import { IAncientAbility as BaseIAncientAbility } from './interfaces/ancientAbility';
-import { IAbility as BaseIAbility } from './interfaces/ability';
-import { IQuery as BaseIQuery } from './interfaces/query';
-import { ISet as BaseISet } from './interfaces/set';
-import { ISuperType as BaseISuperType } from './interfaces/superType';
-import { ISubType as BaseISubType } from './interfaces/subType';
-import { IType as BaseIType } from './interfaces/type';
-
 export namespace PokemonTCG {
-  export type IAttack = BaseIAttack;
-  export type IAncientAbility = BaseIAncientAbility;
-  export type IAbility = BaseIAbility;
-  // export type IQuery = BaseIQuery;
-  export type ISet = BaseISet;
-  export type ISuperType = BaseISuperType;
-  export type ISubType = BaseISubType;
-  export type IType = BaseIType;
-
-  export interface IQuery extends BaseIQuery {}
+  export interface IQuery {
+    name: string;
+    value: string | number;
+  }
 
   export const Card = BaseCard;
   export type Card = BaseCard;

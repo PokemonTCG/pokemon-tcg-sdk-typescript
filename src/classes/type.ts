@@ -15,5 +15,5 @@ export class Type implements IType {
       .then(response => {
         return response;
       });
-  } 
+  }
 }

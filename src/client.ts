@@ -1,11 +1,6 @@
 import * as axios from 'axios';
 import { PokemonTCG } from './sdk';
 import { IQuery } from './interfaces/query';
-import { ICard } from './interfaces/card';
-import { IType } from './interfaces/type';
-import { ISuperType } from './interfaces/superType';
-import { ISubType } from './interfaces/subType';
-import { ISet } from './interfaces/set';
 
 export class Client {
   static apiUrl: string = `${PokemonTCG.API_URL}/v${PokemonTCG.version}`;

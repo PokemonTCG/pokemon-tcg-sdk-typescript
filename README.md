@@ -96,7 +96,7 @@ Card.find(id: string): Promise<Card>
 Card.where(params: IQuery[]): Promise<Card[]>
 Card.all(): Promise<Card[]>
 
-Set.find(name: string): Promise<Set>
+Set.find(id: string): Promise<Set>
 Set.where(params: IQuery[]): Promise<Set[]>
 Set.all(): Promise<Set[]>
 

@@ -1,6 +1,6 @@
 import { ISet } from '../interfaces/set';
-import { QueryBuilder } from '../queryBuilder';
 import { IQuery } from '../interfaces/query';
+import { QueryBuilder } from '../queryBuilder';
 
 export class Set implements ISet {
   code: string;

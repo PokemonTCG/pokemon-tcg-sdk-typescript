@@ -2,60 +2,85 @@
 
 This is the TypeScript SDK for the [Pokemon TCG API](https://pokemontcg.io).
 
-## Installation 
+## Installation
 
-```
-npm install --save pokemon-tcg-sdk-typescript
-```
+**npm**
+
+    npm install --save pokemon-tcg-sdk-typescript
+
+**yarn**
+
+    yarn add pokemon-tcg-sdk-typescript
 
 ## Class Definitions
 
 ### Card
 
 ```typescript
-id: number;
-name: string;
-imageUrl: string;
-imageUrlHighRes: string;
-subType: ISubType;
-superType: ISuperType;
 ability: IAbility;
-hp: number;
-number: number;
 artist: string;
-rarity: string;
-series: string;
-set: ISet;
-setCode: string;
-retreatCost: string;
-text: string;
-types: IType[];
 attacks: IAttack[];
-weaknesses: string[];
-resistances: string[];
-nationalPokedexNumber: number;
-ancientTrait: string;
+convertedRetreatCost: number;
 evolvesFrom: string;
+hp: string;
+id: string;
+imageUrl: string;
+imageUrlHiRes: string;
+name: string;
+nationalPokedexNumber: number;
+number: string;
+rarity: string;
+resistances: IResistance[];
+retreatCost: string[];
+series: string;
+set: string;
+setCode: string;
+subtype: string;
+supertype: string;
+text: string[];
+types: string[];
+weaknesses: IWeakness[];
+```
+
+### IAbility
+
+```typescript
+name: string;
+text: string;
+type: string;
+```
+
+### IAttack
+
+```typescript
+cost: string[];
+name: string;
+text: string;
+damage: string;
+convertedEnergyCost: string;
+```
+
+### IResistance, IWeakness
+
+```typescript
+type: string;
+value: string;
 ```
 
 ### Set
 
 ```typescript
 code: string;
-name: string;
-series: string;
-totalCards: number;
-standardLegal: boolean;
 expandedLegal: boolean;
-releaseDate: string;
-symbolUrl: string;
+logoUrl: string;
+name: string;
 ptcgoCode: string;
-```
-
-### Type, SubType, SuperType
-
-```typescript
-type: string;
+releaseDate: string;
+series: string;
+standardLegal: boolean;
+symbolUrl: string;
+totalCards: number;
+updatedAt: string;
 ```
 
 ### IQuery
@@ -71,13 +96,11 @@ Card.find(id: string): Promise<Card>
 Card.where(params: IQuery[]): Promise<Card[]>
 Card.all(): Promise<Card[]>
 
-Set.find(id: string): Promise<Set>
+Set.find(name: string): Promise<Set>
 Set.where(params: IQuery[]): Promise<Set[]>
 Set.all(): Promise<Set[]>
 
-Type.all(): Promise<Type[]>
-SuperType.all(): Promise<SuperType[]>
-SubType.all(): Promise<SubType[]>
+Type.all(): Promise<Type[]>  // TODO
 ```
 
 ## Usage

@@ -100,7 +100,9 @@ Set.find(id: string): Promise<Set>
 Set.where(params: IQuery[]): Promise<Set[]>
 Set.all(): Promise<Set[]>
 
-Type.all(): Promise<Type[]>  // TODO
+Meta.allTypes(): Promise<string[]>
+Meta.allSubtypes(): Promise<string[]>
+Meta.allSupertypes(): Promise<string[]>
 ```
 
 ## Usage

@@ -31,7 +31,7 @@ export class QueryBuilder {
     return this.returnResponse(t.resource(), params);
   }
 
-  public static returnResponse(resource: string, params: IQuery[], single?: boolean): Promise<any> {
+  private static returnResponse(resource: string, params: IQuery[], single?: boolean): Promise<any> {
     return Client.get(resource, params)
       .then(response => {
         if (single) {

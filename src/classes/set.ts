@@ -1,17 +1,19 @@
 import { ISet } from '../interfaces/set';
-import { QueryBuilder } from '../queryBuilder';
 import { IQuery } from '../interfaces/query';
+import { QueryBuilder } from '../queryBuilder';
 
 export class Set implements ISet {
   code: string;
-  name: string;
-  series: string;
-  totalCards: number;
-  standardLegal: boolean;
   expandedLegal: boolean;
-  releaseDate: string;
-  symbolUrl: string;
+  logoUrl: string;
+  name: string;
   ptcgoCode: string;
+  releaseDate: string;
+  series: string;
+  standardLegal: boolean;
+  symbolUrl: string;
+  totalCards: number;
+  updatedAt: string;
 
   constructor() {}
 
@@ -39,5 +41,4 @@ export class Set implements ISet {
         return response;
       });
   }
-  
 }

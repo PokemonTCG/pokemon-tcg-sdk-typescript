@@ -32,10 +32,6 @@ export class QueryBuilder {
   }
 
   private static returnResponse(resource: string, params: IQuery[]): Promise<any> {
-    return Client.get(resource, params)
-      .then(response => {
-        return response;
-      })
-      .catch(error => console.error(error));
+    return Client.get(resource, params).catch(error => console.error(error));
   }
 }

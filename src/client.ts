@@ -28,7 +28,7 @@ export class Client {
 
     if (params) {
       params.map(param => {
-        if (resource === 'sets' && param.name === 'id') {
+        if (param.name === 'id') {
           url = `/${param.value}`;
         }
       });

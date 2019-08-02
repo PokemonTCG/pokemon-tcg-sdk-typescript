@@ -22,7 +22,7 @@ export class QueryBuilder {
       value: id
     }];
 
-    return this.returnResponse(t.resource(), params, true);
+    return this.returnResponse(t.resource(), params);
   }
 
   static where<T extends Card | Set>(type: (new() => T), params: IQuery[]): Promise<T[]> {
@@ -31,13 +31,9 @@ export class QueryBuilder {
     return this.returnResponse(t.resource(), params);
   }
 
-  private static returnResponse(resource: string, params: IQuery[], single?: boolean): Promise<any> {
+  private static returnResponse(resource: string, params: IQuery[]): Promise<any> {
     return Client.get(resource, params)
       .then(response => {
-        if (single) {
-          return response[0];
-        }
-
         return response;
       })
       .catch(error => console.error(error));

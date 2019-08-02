@@ -5,7 +5,7 @@ import { IQuery } from './interfaces/query';
 export class Client {
   static apiUrl: string = `${PokemonTCG.API_URL}/v${PokemonTCG.version}`;
 
-  static get(resource: string, params?: IQuery[]): Promise<any> {
+  static get(resource: string, params?: IQuery[] | string): Promise<any> {
     let url: string = `${this.apiUrl}/${resource}`;
     let config: axios.AxiosRequestConfig = {
       headers: {
@@ -13,28 +13,13 @@ export class Client {
       }
     };
 
-    // This is needed because the /sets endpoint doesn't take
-    // an id as a parameter so we need to append it to the url
-    url += this.checkForId(resource, params);
+    if(typeof params === 'string') url += `/${params}`;
+    else url += `?${this.paramsToQuery(params)}`;
 
-    return axios.default.get<any>(`${url}?${this.paramsToQuery(params)}`, config)
+    return axios.default.get<any>(url, config)
       .then(response => {
         return response.data[Object.keys(response.data)[0]];
       })
-  }
-
-  private static checkForId(resource: string, params?: IQuery[]): string {
-    let url: string = '';
-
-    if (params) {
-      params.map(param => {
-        if (param.name === 'id') {
-          url = `/${param.value}`;
-        }
-      });
-    }
-
-    return url;
   }
 
   private static paramsToQuery(params?: IQuery[]): string {

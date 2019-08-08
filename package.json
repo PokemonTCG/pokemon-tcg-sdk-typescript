@@ -15,6 +15,10 @@
     "build" : "tsc"
   },
   "author": "Bradyn Glines",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PokemonTCG/pokemon-tcg-sdk-typescript"
+  },
   "contributors": [
     "CptSpaceToaster",
     "Monbrey"

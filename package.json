@@ -16,7 +16,7 @@
   "author": "Bradyn Glines",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.17.1",
+    "axios": "^0.18.1",
     "typescript": "^2.6.2"
   },
   "devDependencies": {

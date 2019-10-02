@@ -27,7 +27,7 @@ export class Client {
 
     if (params) {
       params.map((q: IQuery) => {
-        query += `${q.name}=${encodeURI(q.value.toString())}`.concat('&');
+        query += `${q.name}=${encodeURIComponent(q.value.toString())}`.concat('&');
       });
     }
 

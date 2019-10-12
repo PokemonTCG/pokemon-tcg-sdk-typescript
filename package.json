@@ -14,14 +14,14 @@
     "test": "mocha --reporter spec --require ts-node/register 'src/**/*.test.ts'",
     "build": "tsc"
   },
-  "author": "Bradyn Glines",
   "repository": {
     "type": "git",
     "url": "https://github.com/PokemonTCG/pokemon-tcg-sdk-typescript"
   },
   "contributors": [
-    "CptSpaceToaster",
-    "Monbrey"
+    "Bradyn Glines (https://github.com/glinesbdev)",
+    "CptSpaceToaster (https://github.com/CptSpaceToaster)",
+    "Monbrey (https://github.com/Monbrey)"
   ],
   "license": "MIT",
   "dependencies": {

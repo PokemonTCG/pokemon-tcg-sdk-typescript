@@ -1,2 +1,4 @@
-tsconfig.json
 src
+tsconfig.json
+dist/coverage
+*.tgz

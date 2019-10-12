@@ -15,8 +15,6 @@ export class Set implements ISet {
   totalCards: number;
   updatedAt: string;
 
-  constructor() {}
-
   resource(): string {
     return 'sets';
   }

@@ -1,6 +1,6 @@
 {
   "name": "pokemon-tcg-sdk-typescript",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Typescript SDK for the PokemonTCG API (https://pokemontcg.io)",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -12,7 +12,7 @@
   ],
   "scripts": {
     "test": "mocha --reporter spec --require ts-node/register 'src/**/*.test.ts'",
-    "build" : "tsc"
+    "build": "tsc"
   },
   "author": "Bradyn Glines",
   "repository": {

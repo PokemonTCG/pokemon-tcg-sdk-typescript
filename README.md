@@ -147,4 +147,3 @@ PokemonTCG.Card.all()
 
 ## TODO
 * Add more testing?
-* Update package name for easier use?

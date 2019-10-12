@@ -2,7 +2,6 @@ import { Client } from './client';
 import { Card } from "./classes/card";
 import { Set } from "./classes/set";
 import { IQuery } from './interfaces/query';
-import { AxiosResponse } from 'axios';
 
 export class QueryBuilder {
     static all<T extends Card | Set>(type: (new () => T)): Promise<T[]> {

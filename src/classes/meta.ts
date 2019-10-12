@@ -1,8 +1,6 @@
 import { Client } from '../client';
 
 export class Meta {
-  constructor() {}
-
   static allTypes(): Promise<string[]> {
     return Client.get('types');
   }

@@ -31,8 +31,6 @@ export class Card implements ICard {
   types: string[];
   weaknesses: IWeakness[];
 
-  constructor() {}
-
   resource(): string {
     return 'cards';
   }

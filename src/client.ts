@@ -1,9 +1,9 @@
 import * as axios from 'axios';
-import { PokemonTCG } from './sdk';
+import { API_URL, API_VERSION } from './sdk';
 import { IQuery } from './interfaces/query';
 
 export class Client {
-  static apiUrl: string = `${PokemonTCG.API_URL}/v${PokemonTCG.version}`;
+  static apiUrl: string = `${API_URL}/v${API_VERSION}`;
 
   static get(resource: string, params?: IQuery[] | string): Promise<any> {
     let url: string = `${this.apiUrl}/${resource}`;

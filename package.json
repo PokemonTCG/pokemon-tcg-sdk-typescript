@@ -1,6 +1,6 @@
 {
   "name": "pokemon-tcg-sdk-typescript",
-  "version": "1.0.3",
+  "version": "1.2.2",
   "description": "Typescript SDK for the PokemonTCG API (https://pokemontcg.io)",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -11,12 +11,21 @@
     "SDK"
   ],
   "scripts": {
-    "test": "mocha --reporter spec --require ts-node/register 'src/**/*.test.ts'"
+    "test": "mocha --reporter spec --require ts-node/register 'src/**/*.test.ts'",
+    "build": "tsc"
   },
-  "author": "Bradyn Glines",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PokemonTCG/pokemon-tcg-sdk-typescript"
+  },
+  "contributors": [
+    "Bradyn Glines (https://github.com/glinesbdev)",
+    "CptSpaceToaster (https://github.com/CptSpaceToaster)",
+    "Monbrey (https://github.com/Monbrey)"
+  ],
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.19.0",
     "typescript": "^2.6.2"
   },
   "devDependencies": {

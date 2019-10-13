@@ -1,40 +1,36 @@
-import { ICard } from '../interfaces/card'; 
-import { ISubType } from '../interfaces/subType';
-import { ISuperType } from '../interfaces/superType';
 import { IAbility } from '../interfaces/ability';
-import { ISet } from '../interfaces/set';
-import { IType } from '../interfaces/type';
 import { IAttack } from '../interfaces/attack';
-import { QueryBuilder } from '../queryBuilder';
+import { ICard } from '../interfaces/card';
 import { IQuery } from '../interfaces/query';
+import { IResistance } from '../interfaces/resistance';
+import { IWeakness } from '../interfaces/weakness';
+import { QueryBuilder } from '../queryBuilder';
 
 export class Card implements ICard {
-  id: number;
-  name: string;
-  imageUrl: string;
-  imageUrlHighRes: string;
-  subType: ISubType;
-  superType: ISuperType;
   ability: IAbility;
-  hp: number;
-  number: number;
   artist: string;
-  rarity: string;
-  series: string;
-  set: ISet;
-  setCode: string;
-  retreatCost: string;
-  text: string;
-  types: IType[];
   attacks: IAttack[];
-  weaknesses: string[];
-  resistances: string[];
-  nationalPokedexNumber: number;
-  ancientTrait: string;
+  convertedRetreatCost: number;
   evolvesFrom: string;
+  hp: string;
+  id: string;
+  imageUrl: string;
+  imageUrlHiRes: string;
+  name: string;
+  nationalPokedexNumber: number;
+  number: string;
+  rarity: string;
+  resistances: IResistance[];
+  retreatCost: string[];
+  series: string;
+  set: string;
+  setCode: string;
+  subtype: string;
+  supertype: string;
+  text: string[];
+  types: string[];
+  weaknesses: IWeakness[];
 
-  constructor() {}
-  
   resource(): string {
     return 'cards';
   }

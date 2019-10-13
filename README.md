@@ -2,60 +2,85 @@
 
 This is the TypeScript SDK for the [Pokemon TCG API](https://pokemontcg.io).
 
-## Installation 
+## Installation
 
-```
-npm install --save pokemon-tcg-sdk-typescript
-```
+**npm**
+
+    npm install --save pokemon-tcg-sdk-typescript
+
+**yarn**
+
+    yarn add pokemon-tcg-sdk-typescript
 
 ## Class Definitions
 
 ### Card
 
 ```typescript
-id: number;
-name: string;
-imageUrl: string;
-imageUrlHighRes: string;
-subType: ISubType;
-superType: ISuperType;
 ability: IAbility;
-hp: number;
-number: number;
 artist: string;
-rarity: string;
-series: string;
-set: ISet;
-setCode: string;
-retreatCost: string;
-text: string;
-types: IType[];
 attacks: IAttack[];
-weaknesses: string[];
-resistances: string[];
-nationalPokedexNumber: number;
-ancientTrait: string;
+convertedRetreatCost: number;
 evolvesFrom: string;
+hp: string;
+id: string;
+imageUrl: string;
+imageUrlHiRes: string;
+name: string;
+nationalPokedexNumber: number;
+number: string;
+rarity: string;
+resistances: IResistance[];
+retreatCost: string[];
+series: string;
+set: string;
+setCode: string;
+subtype: string;
+supertype: string;
+text: string[];
+types: string[];
+weaknesses: IWeakness[];
+```
+
+### IAbility
+
+```typescript
+name: string;
+text: string;
+type: string;
+```
+
+### IAttack
+
+```typescript
+cost: string[];
+name: string;
+text: string;
+damage: string;
+convertedEnergyCost: string;
+```
+
+### IResistance, IWeakness
+
+```typescript
+type: string;
+value: string;
 ```
 
 ### Set
 
 ```typescript
 code: string;
-name: string;
-series: string;
-totalCards: number;
-standardLegal: boolean;
 expandedLegal: boolean;
-releaseDate: string;
-symbolUrl: string;
+logoUrl: string;
+name: string;
 ptcgoCode: string;
-```
-
-### Type, SubType, SuperType
-
-```typescript
-type: string;
+releaseDate: string;
+series: string;
+standardLegal: boolean;
+symbolUrl: string;
+totalCards: number;
+updatedAt: string;
 ```
 
 ### IQuery
@@ -75,9 +100,9 @@ Set.find(id: string): Promise<Set>
 Set.where(params: IQuery[]): Promise<Set[]>
 Set.all(): Promise<Set[]>
 
-Type.all(): Promise<Type[]>
-SuperType.all(): Promise<SuperType[]>
-SubType.all(): Promise<SubType[]>
+Meta.allTypes(): Promise<string[]>
+Meta.allSubtypes(): Promise<string[]>
+Meta.allSupertypes(): Promise<string[]>
 ```
 
 ## Usage
@@ -116,10 +141,15 @@ PokemonTCG.Card.all()
 ## Contributing
  * Fork it (click the Fork button at the top of the page)
  * Create your feature branch (git checkout -b my-new-feature)
+ * Make some changes and fix some bugs!
+ * Run the tests `npm run-script test`
+ * Test your changes in a project of yours:
+   * Create a link with (npm)[https://docs.npmjs.com/cli/link.html] or (yarn)[https://yarnpkg.com/lang/en/docs/cli/link/] (depending on what tool you installed this SDK with)
+   * In your project that **uses** the SDK, install the linked package with `yarn/npm link pokemon-tcg-sdk-typescript`
+   * Verify the SDK behaves as expected, and your changes took effect
  * Commit your changes (git commit -am 'Add some feature')
  * Push to the branch (git push origin my-new-feature)
  * Create a new Pull Request
 
 ## TODO
 * Add more testing?
-* Update package name for easier use?

@@ -50,8 +50,8 @@ describe('Client', () => {
 
     Client.get('sets', params)
       .then(response => {
-        expect(response).to.be.a('object');
-        expect(response.name).to.equal('Base');
+        expect(response).to.be.a('array');
+        expect(response[0].name).to.equal('Base');
       })
       .catch(error => console.error(error));
   });

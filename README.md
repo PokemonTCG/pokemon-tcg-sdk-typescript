@@ -144,7 +144,7 @@ PokemonTCG.Card.all()
  * Make some changes and fix some bugs!
  * Run the tests `npm run-script test`
  * Test your changes in a project of yours:
-   * Create a link with (npm)[https://docs.npmjs.com/cli/link.html] or (yarn)[https://yarnpkg.com/lang/en/docs/cli/link/] (depending on what tool you installed this SDK with)
+   * Create a link with [npm](https://docs.npmjs.com/cli/link.html) or [yarn](https://yarnpkg.com/lang/en/docs/cli/link/) (depending on what tool you installed this SDK with)
    * In your project that **uses** the SDK, install the linked package with `yarn/npm link pokemon-tcg-sdk-typescript`
    * Verify the SDK behaves as expected, and your changes took effect
  * Commit your changes (git commit -am 'Add some feature')

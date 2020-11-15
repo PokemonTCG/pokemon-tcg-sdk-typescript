@@ -11,18 +11,18 @@ export class QueryBuilder {
             value: 1000
         }];
 
-        return Client.get(t.resource(), params).catch(error => console.error(error));
+        return Client.get(t.resource(), params);
     }
 
     static find<T extends Card | Set>(type: (new () => T), id: string): Promise<T> {
         let t = new type();
 
-        return Client.get(t.resource(), id).catch(error => console.error(error));
+        return Client.get(t.resource(), id);
     }
 
     static where<T extends Card | Set>(type: (new () => T), params: IQuery[]): Promise<T[]> {
         let t = new type();
 
-        return Client.get(t.resource(), params).catch(error => console.error(error));
+        return Client.get(t.resource(), params);
     }
 }

@@ -1,12 +1,11 @@
 import * as chai from 'chai';
-import * as mocha from 'mocha';
 import { Client } from '../client';
 import { IQuery } from '../interfaces/query';
 
 const expect = chai.expect;
 describe('Client', () => {
   it('should get a single using the cards resource and query params' , () => {
-    let params: IQuery[] = [{
+    const params: IQuery[] = [{
       name: 'id',
       value: 'xy7-54'
     }];
@@ -15,8 +14,7 @@ describe('Client', () => {
       .then(response => {
         expect(response).to.be.a('array');
         expect(response[0].name).to.equal('Gardevoir');
-      })
-      .catch(error => console.error(error));
+      });
   });
 
   it('should get a default list of cards using the cards resource with no query params', () => {
@@ -24,12 +22,11 @@ describe('Client', () => {
       .then(response => {
         expect(response).to.be.a('array');
         expect(response.length).to.equal(100);
-      })
-      .catch(error => console.error(error));
+      });
   });
 
   it('should get sets using the sets resource and query params', () => {
-    let params: IQuery[] = [{
+    const params: IQuery[] = [{
       name: 'name',
       value: 'Base'
     }];
@@ -38,12 +35,11 @@ describe('Client', () => {
       .then(response => {
         expect(response).to.be.a('array');
         expect(response[0]).to.be.a('object');
-      })
-      .catch(error => console.error(error));      
+      });
   });
 
   it('should get a single set using the sets resource and query params', () => {
-    let params: IQuery[] = [{
+    const params: IQuery[] = [{
       name: 'id',
       value: 'base1'
     }];
@@ -52,8 +48,7 @@ describe('Client', () => {
       .then(response => {
         expect(response).to.be.a('array');
         expect(response[0].name).to.equal('Base');
-      })
-      .catch(error => console.error(error));
+      });
   });
 
   it('should get a default list of sets using the sets resource with no query params', () => {
@@ -62,8 +57,7 @@ describe('Client', () => {
         expect(response).to.be.a('array');
         expect(response[0]).to.be.a('object');
         expect(response[0].code).to.equal('base1');
-      })
-      .catch(error => console.error(error));
+      });
   });
 
   it('should get a list of types using the types resource', () => {
@@ -71,8 +65,7 @@ describe('Client', () => {
       .then(response => {
         expect(response).to.be.a('array');
         expect(response[0]).to.be.a('string');
-      })
-      .catch(error => console.error(error));
+      });
   });
 
   it('should get a list of supertypes using the supertypes resource', () => {
@@ -80,8 +73,7 @@ describe('Client', () => {
       .then(response => {
         expect(response).to.be.a('array');
         expect(response[0]).to.be.a('string');
-      })
-      .catch(error => console.error(error));
+      });
   });
 
   it('should get a list of subtypes using the subtypes resource', () => {
@@ -89,7 +81,6 @@ describe('Client', () => {
       .then(response => {
         expect(response).to.be.a('array');
         expect(response[0]).to.be.a('string');
-      })
-      .catch(error => console.error(error));
+      });
   });
 });

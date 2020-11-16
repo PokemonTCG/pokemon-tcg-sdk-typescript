@@ -5,7 +5,8 @@
     "declaration": true,
     "outDir": "./dist",
     "sourceMap": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "lib": ["ES2015"]
   },
   "include": [
     "src/**/*.ts"

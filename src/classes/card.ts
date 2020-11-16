@@ -35,24 +35,27 @@ export class Card implements ICard {
     return 'cards';
   }
 
-  static find(id: string): Promise<Card> {
+  static async find(id: string): Promise<Card> {
     return QueryBuilder.find(this, id)
       .then(response => {
         return response;
-      });
+      })
+      .catch(error => Promise.reject(error));
   }
 
-  static all(): Promise<Card[]> {
+  static async all(): Promise<Card[]> {
     return QueryBuilder.all(this)
       .then(response => {
         return response;
-      });
+      })
+      .catch(error => Promise.reject(error));
   }
 
-  static where(params: IQuery[]): Promise<Card[]> {
+  static async where(params: IQuery[]): Promise<Card[]> {
     return QueryBuilder.where(this, params)
       .then(response => {
         return response;
-      });
+      })
+      .catch(error => Promise.reject(error));
   }
 }

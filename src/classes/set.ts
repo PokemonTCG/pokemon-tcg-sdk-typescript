@@ -19,24 +19,27 @@ export class Set implements ISet {
     return 'sets';
   }
 
-  static find(id: string): Promise<Set> {
+  static async find(id: string): Promise<Set> {
     return QueryBuilder.find(this, id)
       .then(response => {
         return response;
-      });
+      })
+      .catch(error => Promise.reject(error));
   }
 
-  static all(): Promise<Set[]> {
+  static async all(): Promise<Set[]> {
     return QueryBuilder.all(this)
       .then(response => {
         return response;
-      });
+      })
+      .catch(error => Promise.reject(error));
   }
 
-  static where(params: IQuery[]): Promise<Set[]> {
+  static async where(params: IQuery[]): Promise<Set[]> {
     return QueryBuilder.where(this, params)
       .then(response => {
         return response;
-      });
+      })
+      .catch(error => Promise.reject(error));
   }
 }

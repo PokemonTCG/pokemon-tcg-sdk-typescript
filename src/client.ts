@@ -5,7 +5,7 @@ import { IQuery } from './interfaces/query';
 export class Client {
   static apiUrl: string = `${API_URL}/v${API_VERSION}`;
 
-  static get(resource: string, params?: IQuery[] | string): Promise<any> {
+  static async get(resource: string, params?: IQuery[] | string): Promise<any> {
     let url: string = `${this.apiUrl}/${resource}`;
     let config: axios.AxiosRequestConfig = {
       headers: {
@@ -20,6 +20,7 @@ export class Client {
       .then(response => {
         return response.data[Object.keys(response.data)[0]];
       })
+      .catch(error => Promise.reject(error));
   }
 
   private static paramsToQuery(params?: IQuery[]): string {

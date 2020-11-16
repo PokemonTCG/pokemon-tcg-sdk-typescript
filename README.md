@@ -18,6 +18,7 @@ This is the TypeScript SDK for the [Pokemon TCG API](https://pokemontcg.io).
 
 ```typescript
 ability: IAbility;
+ancientTrait?: IAncientTrait;
 artist: string;
 attacks: IAttack[];
 convertedRetreatCost: number;

@@ -10,4 +10,5 @@ export interface ISet {
   symbolUrl: string;
   totalCards: number;
   updatedAt: string;
+  updatedSince: string;
 }

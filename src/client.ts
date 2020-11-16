@@ -7,7 +7,7 @@ export class Client {
 
   static async get(resource: string, params?: IQuery[] | string): Promise<any> {
     let url: string = `${this.apiUrl}/${resource}`;
-    let config: axios.AxiosRequestConfig = {
+    const config: axios.AxiosRequestConfig = {
       headers: {
         'Content-Type': 'application/json'
       }

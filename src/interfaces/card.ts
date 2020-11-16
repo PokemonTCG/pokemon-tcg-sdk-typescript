@@ -1,10 +1,12 @@
 import { IAbility } from '../interfaces/ability';
+import { IAncientTrait } from './ancientTrait';
 import { IAttack } from '../interfaces/attack';
 import { IResistance } from '../interfaces/resistance';
 import { IWeakness } from '../interfaces/weakness';
 
 export interface ICard {
   ability: IAbility;
+  ancientTrait?: IAncientTrait;
   artist: string;
   attacks: IAttack[];
   convertedRetreatCost: number;

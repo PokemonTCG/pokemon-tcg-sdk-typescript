@@ -1,4 +1,5 @@
 import { IAbility } from '../interfaces/ability';
+import { IAncientTrait } from '../interfaces/ancientTrait';
 import { IAttack } from '../interfaces/attack';
 import { ICard } from '../interfaces/card';
 import { IQuery } from '../interfaces/query';
@@ -9,6 +10,7 @@ import { QueryBuilder } from '../queryBuilder';
 export class Card implements ICard {
   ability: IAbility;
   artist: string;
+  ancientTrait?: IAncientTrait;
   attacks: IAttack[];
   convertedRetreatCost: number;
   evolvesFrom: string;

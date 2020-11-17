@@ -1,7 +1,7 @@
 import * as chai from 'chai';
-import { Card } from '../classes/card';
-import { QueryBuilder } from '../queryBuilder';
-import { IQuery } from '../interfaces/query';
+import { Card } from '../src/classes/card';
+import { QueryBuilder } from '../src/queryBuilder';
+import { IQuery } from '../src/interfaces/query';
 
 const expect = chai.expect;
 describe('QueryBuilder', () => {

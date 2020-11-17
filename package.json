@@ -11,7 +11,7 @@
     "SDK"
   ],
   "scripts": {
-    "test": "mocha --reporter spec --require ts-node/register 'src/**/*.test.ts'",
+    "test": "mocha --reporter spec --require ts-node/register 'coverage/**/*.test.ts'",
     "build": "tsc"
   },
   "repository": {

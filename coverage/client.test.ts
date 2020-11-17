@@ -1,6 +1,6 @@
 import * as chai from 'chai';
-import { Client } from '../client';
-import { IQuery } from '../interfaces/query';
+import { Client } from '../src/client';
+import { IQuery } from '../src/interfaces/query';
 
 const expect = chai.expect;
 describe('Client', () => {

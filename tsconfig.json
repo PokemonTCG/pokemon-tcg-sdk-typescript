@@ -6,9 +6,13 @@
     "outDir": "./dist",
     "sourceMap": true,
     "experimentalDecorators": true,
-    "lib": ["ES2015"]
+    "lib": ["ES6"]
   },
   "include": [
     "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "coverage"
   ]
 }

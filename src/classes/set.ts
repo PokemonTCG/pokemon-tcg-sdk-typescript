@@ -14,6 +14,7 @@ export class Set implements ISet {
   symbolUrl: string;
   totalCards: number;
   updatedAt: string;
+  updatedSince: string;
 
   resource(): string {
     return 'sets';

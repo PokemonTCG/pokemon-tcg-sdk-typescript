@@ -1,6 +1,8 @@
 import * as axios from 'axios';
-import { API_URL, API_VERSION } from './sdk';
 import { IQuery } from './interfaces/query';
+
+const API_URL: string = 'https://api.pokemontcg.io';
+const API_VERSION: string = '1';
 
 export class Client {
   static apiUrl: string = `${API_URL}/v${API_VERSION}`;

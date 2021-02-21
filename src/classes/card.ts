@@ -2,13 +2,17 @@ import { IAbility } from '../interfaces/ability';
 import { IAncientTrait } from '../interfaces/ancientTrait';
 import { IAttack } from '../interfaces/attack';
 import { ICard } from '../interfaces/card';
+import { ICardImage } from '../interfaces/image';
+import { ILegality } from '../interfaces/legality';
 import { IQuery } from '../interfaces/query';
 import { IResistance } from '../interfaces/resistance';
+import { ISet } from '../interfaces/set';
+import { ITCGPlayer } from '../interfaces/tcgplayer';
 import { IWeakness } from '../interfaces/weakness';
 import { QueryBuilder } from '../queryBuilder';
 
 export class Card implements ICard {
-  ability: IAbility;
+  abilities: IAbility[];
   artist: string;
   ancientTrait?: IAncientTrait;
   attacks: IAttack[];
@@ -16,20 +20,19 @@ export class Card implements ICard {
   evolvesFrom: string;
   hp: string;
   id: string;
-  imageUrl: string;
-  imageUrlHiRes: string;
+  images: ICardImage;
+  legalities: ILegality;
   name: string;
-  nationalPokedexNumber: number;
+  nationalPokedexNumbers: number[];
   number: string;
   rarity: string;
   resistances: IResistance[];
   retreatCost: string[];
-  series: string;
-  set: string;
-  setCode: string;
-  subtype: string;
+  rules: string[];
+  set: ISet;
+  subtypes: string[];
   supertype: string;
-  text: string[];
+  tcgplayer: ITCGPlayer | undefined;
   types: string[];
   weaknesses: IWeakness[];
 

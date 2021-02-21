@@ -12,4 +12,8 @@ export class Meta {
   static async allSupertypes(): Promise<string[]> {
     return Client.get('supertypes');
   }
+
+  static allRarities(): Promise<string[]> {
+    return Client.get('rarities');
+  }
 }

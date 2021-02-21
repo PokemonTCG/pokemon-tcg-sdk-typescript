@@ -13,7 +13,7 @@ describe('Client', () => {
     Client.get('cards', params)
       .then(response => {
         expect(response).to.be.a('array');
-        expect(response[0].name).to.equal('Gardevoir');
+        expect(response[0].name).to.equal('Ampharos');
       });
   });
 
@@ -21,7 +21,7 @@ describe('Client', () => {
     Client.get('cards')
       .then(response => {
         expect(response).to.be.a('array');
-        expect(response.length).to.equal(100);
+        expect(response.length).to.equal(250);
       });
   });
 
@@ -56,7 +56,7 @@ describe('Client', () => {
       .then(response => {
         expect(response).to.be.a('array');
         expect(response[0]).to.be.a('object');
-        expect(response[0].code).to.equal('base1');
+        expect(response[0].id).to.equal('base1');
       });
   });
 

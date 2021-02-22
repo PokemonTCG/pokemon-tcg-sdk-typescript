@@ -1,5 +1,5 @@
 export interface IAttack {
-  convertedEnergyCost: string;
+  convertedEnergyCost: number;
   cost: string[];
   damage: string;
   name: string;

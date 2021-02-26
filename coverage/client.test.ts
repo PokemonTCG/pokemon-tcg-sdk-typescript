@@ -1,11 +1,11 @@
 import * as chai from 'chai';
 import { Client } from '../src/client';
-import { IQuery } from '../src/interfaces/query';
+import { Query } from '../src/interfaces/query';
 
 const expect = chai.expect;
 describe('Client', () => {
   it('should get a single using the cards resource and query params' , () => {
-    const params: IQuery[] = [{
+    const params: Query[] = [{
       name: 'id',
       value: 'xy7-54'
     }];
@@ -26,7 +26,7 @@ describe('Client', () => {
   });
 
   it('should get sets using the sets resource and query params', () => {
-    const params: IQuery[] = [{
+    const params: Query[] = [{
       name: 'name',
       value: 'Base'
     }];
@@ -39,7 +39,7 @@ describe('Client', () => {
   });
 
   it('should get a single set using the sets resource and query params', () => {
-    const params: IQuery[] = [{
+    const params: Query[] = [{
       name: 'id',
       value: 'base1'
     }];

@@ -1,7 +1,7 @@
 import * as chai from 'chai';
 import { Card } from '../src/classes/card';
 import { QueryBuilder } from '../src/queryBuilder';
-import { IQuery } from '../src/interfaces/query';
+import { Query } from '../src/interfaces/query';
 
 const expect = chai.expect;
 describe('QueryBuilder', () => {
@@ -14,7 +14,7 @@ describe('QueryBuilder', () => {
   });
 
   it('should use where to filter data', () => {
-    const params: IQuery[] = [
+    const params: Query[] = [
       {
         name: 'q',
         value: 'name:Charizard set.id:base1'

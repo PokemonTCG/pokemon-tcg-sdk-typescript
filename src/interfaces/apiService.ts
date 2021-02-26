@@ -1,7 +1,7 @@
 import { Query } from "./query";
 
-export interface APIService {
-    find: <T>(id: string) => Promise<T[]>;
-    all: <T>() => Promise<T[]>;
-    where: <T>(params: Query[]) => Promise<T[]>;
+export interface APIService<T> {
+    find: (id: string) => Promise<T[]>;
+    all: () => Promise<T[]>;
+    where: (params: Query[]) => Promise<T[]>;
 }

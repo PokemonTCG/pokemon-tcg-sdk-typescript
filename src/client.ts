@@ -1,14 +1,13 @@
 import * as axios from 'axios';
-import { IQuery } from './interfaces/query';
-
-const API_URL: string = 'https://api.pokemontcg.io';
-const API_VERSION: string = '1';
+import { Query } from './interfaces/query';
 
 export class Client {
-  static apiUrl: string = `${API_URL}/v${API_VERSION}`;
+  private static readonly API_BASE_URL: string = 'https://api.pokemontcg.io';
+  private static readonly API_VERSION: string = '2';
+  private static readonly API_URL: string = `${Client.API_BASE_URL}/v${Client.API_VERSION}`;
 
-  static async get(resource: string, params?: IQuery[] | string): Promise<any> {
-    let url: string = `${this.apiUrl}/${resource}`;
+  static async get(resource: string, params?: Query[] | string): Promise<any> {
+    let url: string = `${this.API_URL}/${resource}`;
     const config: axios.AxiosRequestConfig = {
       headers: {
         'Content-Type': 'application/json'
@@ -25,11 +24,11 @@ export class Client {
       .catch(error => Promise.reject(error));
   }
 
-  private static paramsToQuery(params?: IQuery[]): string {
+  private static paramsToQuery(params?: Query[]): string {
     let query: string = '';
 
     if (params) {
-      params.map((q: IQuery) => {
+      params.map((q: Query) => {
         query += `${q.name}=${encodeURIComponent(q.value.toString())}`.concat('&');
       });
     }

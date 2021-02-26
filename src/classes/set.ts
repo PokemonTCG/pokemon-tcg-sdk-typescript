@@ -1,20 +1,20 @@
 import { ISet } from '../interfaces/set';
 import { IQuery } from '../interfaces/query';
 import { QueryBuilder } from '../queryBuilder';
+import { ILegality } from '../interfaces/legality';
+import { ISetImage } from '../interfaces/image';
 
 export class Set implements ISet {
-  code: string;
-  expandedLegal: boolean;
-  logoUrl: string;
-  name: string;
+  id: string;
+  images: ISetImage;
+  legalities: ILegality;
+  name:  string;
+  printedTotal: number;
   ptcgoCode: string;
   releaseDate: string;
-  series: string;
-  standardLegal: boolean;
-  symbolUrl: string;
-  totalCards: number;
+  series:  string;
+  total: number;
   updatedAt: string;
-  updatedSince: string;
 
   resource(): string {
     return 'sets';

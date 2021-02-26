@@ -1,6 +1,6 @@
 // Constants
 export const API_URL: string = 'https://api.pokemontcg.io';
-export const API_VERSION: string = '1';
+export const API_VERSION: string = '2';
 
 // Classes
 export * from './classes/card';

@@ -1,18 +1,18 @@
-import { IAbility } from './ability';
-import { IAncientTrait } from './ancientTrait';
-import { IAttack } from './attack';
-import { IResistance } from './resistance';
-import { IWeakness } from './weakness';
+import { Ability } from './ability';
+import { AncientTrait } from './ancientTrait';
+import { Attack } from './attack';
+import { Resistance } from './resistance';
+import { Weakness } from './weakness';
 import { ICardImage } from './image';
 import { ILegality } from './legality';
-import { ISet } from './set';
+import { Set } from './set';
 import { ITCGPlayer } from './tcgplayer';
 
-export interface ICard {
-  abilities: IAbility[];
+export interface Card {
+  abilities: Ability[];
   artist: string;
-  ancientTrait?: IAncientTrait;
-  attacks: IAttack[];
+  ancientTrait?: AncientTrait;
+  attacks: Attack[];
   convertedRetreatCost: number;
   evolvesFrom: string;
   flavorText: string;
@@ -24,13 +24,13 @@ export interface ICard {
   nationalPokedexNumbers: number[];
   number: string;
   rarity: string;
-  resistances: IResistance[];
+  resistances: Resistance[];
   retreatCost: string[];
   rules: string[];
-  set: ISet;
+  set: Set;
   subtypes: string[];
   supertype: string;
   tcgplayer: ITCGPlayer | undefined;
   types: string[];
-  weaknesses: IWeakness[];
+  weaknesses: Weakness[];
 }

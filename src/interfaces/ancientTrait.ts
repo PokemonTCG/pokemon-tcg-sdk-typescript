@@ -1,4 +1,4 @@
-export interface IAncientTrait {
+export interface AncientTrait {
   name: string;
   text: string;
 }

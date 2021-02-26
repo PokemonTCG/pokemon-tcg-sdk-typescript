@@ -1,4 +1,4 @@
-export interface IWeakness {
+export interface Weakness {
   type: string;
   value: string;
 }

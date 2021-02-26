@@ -1,10 +1,10 @@
-import { ISetImage } from "./image";
-import { ILegality } from "./legality";
+import { SetImage } from "./image";
+import { Legality } from "./legality";
 
-export interface ISet {
+export interface Set {
   id: string;
-  images: ISetImage;
-  legalities: ILegality;
+  images: SetImage;
+  legalities: Legality;
   name:  string;
   printedTotal: number;
   ptcgoCode: string;

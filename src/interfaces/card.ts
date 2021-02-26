@@ -3,10 +3,10 @@ import { AncientTrait } from './ancientTrait';
 import { Attack } from './attack';
 import { Resistance } from './resistance';
 import { Weakness } from './weakness';
-import { ICardImage } from './image';
+import { CardImage } from './image';
 import { ILegality } from './legality';
 import { Set } from './set';
-import { ITCGPlayer } from './tcgplayer';
+import { TCGPlayer } from './tcgplayer';
 
 export interface Card {
   abilities: Ability[];
@@ -18,7 +18,7 @@ export interface Card {
   flavorText: string;
   hp: string;
   id: string;
-  images: ICardImage;
+  images: CardImage;
   legalities: ILegality;
   name: string;
   nationalPokedexNumbers: number[];
@@ -30,7 +30,7 @@ export interface Card {
   set: Set;
   subtypes: string[];
   supertype: string;
-  tcgplayer: ITCGPlayer | undefined;
+  tcgplayer: TCGPlayer | undefined;
   types: string[];
   weaknesses: Weakness[];
 }

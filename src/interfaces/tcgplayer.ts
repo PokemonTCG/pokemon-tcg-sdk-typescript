@@ -1,14 +1,14 @@
-export interface ITCGPlayer {
+export interface TCGPlayer {
   url: string;
   updatedAt: string;
   prices: {
-    normal: IPrice | undefined;
-    holofoil: IPrice | undefined;
-    reverseHolofoil: IPrice | undefined;
+    normal: Price | undefined;
+    holofoil: Price | undefined;
+    reverseHolofoil: Price | undefined;
   }
 }
 
-export interface IPrice {
+export interface Price {
   low: number | null
   mid: number | null
   high: number | null

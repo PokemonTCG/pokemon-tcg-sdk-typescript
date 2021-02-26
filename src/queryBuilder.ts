@@ -8,7 +8,7 @@ export class QueryBuilder {
         const t = new type();
         const params: IQuery[] = [{
             name: 'pageSize',
-            value: 1000
+            value: 250,
         }];
 
         return Client.get(t.resource(), params);

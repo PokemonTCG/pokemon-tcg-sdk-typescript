@@ -5,7 +5,8 @@ import { Client } from "../client";
 
 export class CardService implements APIService<Card> {
     async find(id: string): Promise<Card[]> {
-        const response: Card[] = await Client.get('cards', id);
+        const client: Client = Client.getInstance();
+        const response: Card[] = await client.get<Card[]>('cards', id);
         return response;
     };
 
@@ -15,12 +16,14 @@ export class CardService implements APIService<Card> {
             value: 250,
         }];
 
-        const response: Card[] = await Client.get('cards', params);
+        const client: Client = Client.getInstance();
+        const response: Card[] = await client.get<Card[]>('cards', params);
         return response;
     };
 
    async where(params: Query[]): Promise<Card[]> {
-        const response: Card[] = await Client.get('cards', params);
-        return response;
+       const client: Client = Client.getInstance();
+       const response: Card[] = await client.get<Card[]>('cards', params);
+       return response;
     };
 }

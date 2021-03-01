@@ -5,7 +5,8 @@ import { Client } from "../client";
 
 export class SetService implements APIService<Set> {
     async find(id: string): Promise<Set[]> {
-        const response: Set[] = await Client.get('sets', id);
+        const client: Client = Client.getInstance();
+        const response: Set[] = await client.get<Set[]>('sets', id);
         return response;
     };
 
@@ -15,12 +16,14 @@ export class SetService implements APIService<Set> {
             value: 250,
         }];
 
-        const response: Set[] = await Client.get('sets', params);
+        const client: Client = Client.getInstance();
+        const response: Set[] = await client.get<Set[]>('sets', params);
         return response;
     };
 
     async where(params: Query[]): Promise<Set[]> {
-        const response: Set[] = await Client.get('sets', params);
+        const client: Client = Client.getInstance();
+        const response: Set[] = await client.get<Set[]>('sets', params);
         return response;
     };
 }

@@ -1,8 +1,7 @@
 import { Ability } from './ability';
 import { AncientTrait } from './ancientTrait';
 import { Attack } from './attack';
-import { Resistance } from './resistance';
-import { Weakness } from './weakness';
+import { Resistance, Weakness } from './stats';
 import { CardImage } from './image';
 import { ILegality } from './legality';
 import { Set } from './set';
@@ -30,7 +29,7 @@ export interface Card {
   set: Set;
   subtypes: string[];
   supertype: string;
-  tcgplayer: TCGPlayer | undefined;
+  tcgplayer?: TCGPlayer;
   types: string[];
   weaknesses: Weakness[];
 }

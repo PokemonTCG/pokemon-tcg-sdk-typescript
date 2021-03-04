@@ -4,7 +4,7 @@ export enum Legality {
 }
 
 export interface ILegality {
-  expanded: Legality | undefined
-  standard: Legality | undefined
-  unlimited: Legality | undefined
+  expanded?: Legality;
+  standard?: Legality;
+  unlimited?: Legality;
 }

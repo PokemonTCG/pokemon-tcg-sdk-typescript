@@ -33,8 +33,11 @@ export class Client {
       headers
     };
 
-    if(typeof params === 'string') url += `/${params}`;
-    else url += `?${this.paramsToQuery(params)}`;
+    if (typeof params === 'string') {
+      if (params.toLowerCase().includes('page') || params.toLowerCase().includes('order')) url += `?${params}`;
+      else url += `/${params}`;
+    }
+    else url += `?q=${this.paramsToQuery(params)}`;
 
     return axios.default.get<T>(url, config)
       .then(response => {
@@ -45,13 +48,17 @@ export class Client {
 
   private paramsToQuery(params?: Query[]): string {
     let query: string = '';
+    const paramsLength: number = params.length;
 
     if (params) {
-      params.map((q: Query) => {
-        query += `${q.name}=${encodeURIComponent(q.value.toString())}`.concat('&');
-      });
-    }
-
+        params.map((q: Query, i: number) => {
+          if (paramsLength === i + 1) {
+            query += `${q.name}:${encodeURIComponent(q.value.toString())}`;
+          } else {
+            query += `${q.name}:${encodeURIComponent(q.value.toString())}`.concat('&');
+          }
+        });
+      }
     return query;
   }
 }

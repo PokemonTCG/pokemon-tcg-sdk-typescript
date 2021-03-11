@@ -2,27 +2,22 @@ import { Query } from "../interfaces/query";
 import { Card } from "../interfaces/card";
 import { Client } from "../client";
 
-export default {
-    findCardByID: async function (id: string): Promise<Card> {
-        const client: Client = Client.getInstance();
-        const response: Card = await client.get<Card>('cards', id);
-        return response;
-    },
+export async function findCardByID(id: string): Promise<Card> {
+    const client: Client = Client.getInstance();
+    const response: Card = await client.get<Card>('cards', id);
+    return response;
+}
 
-    getAllCards: async function (): Promise<Card[]> {
-        const params: Query[] = [{
-            name: 'pageSize',
-            value: 250,
-        }];
+export async function findCardsByQueries(params: Query[]): Promise<Card[]> {
+    const client: Client = Client.getInstance();
+    const response: Card[] = await client.get<Card[]>('cards', params);
+    return response;
+}
 
-        const client: Client = Client.getInstance();
-        const response: Card[] = await client.get<Card[]>('cards', params);
-        return response;
-    },
+export async function getAllCards(): Promise<Card[]> {
+    const param: string = 'pageSize:250'
 
-    findCardByQueries: async function(params: Query[]): Promise<Card[]> {
-       const client: Client = Client.getInstance();
-       const response: Card[] = await client.get<Card[]>('cards', params);
-       return response;
-    }
+    const client: Client = Client.getInstance();
+    const response: Card[] = await client.get<Card[]>('cards', param);
+    return response;
 }

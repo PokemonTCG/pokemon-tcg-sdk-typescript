@@ -1,6 +1,6 @@
 export enum Legality {
-  LEGAL = 'Legal',
-  BANNED = 'Banned',
+  Legal = 'Legal',
+  Banned = 'Banned',
 }
 
 export interface ILegality {

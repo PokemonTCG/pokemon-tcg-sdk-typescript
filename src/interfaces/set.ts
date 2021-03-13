@@ -1,15 +1,15 @@
 import { SetImage } from "./image";
-import { Legality } from "./legality";
+import { ILegality } from "./legality";
 
 export interface Set {
   id: string;
-  images: SetImage;
-  legalities: Legality;
-  name:  string;
+  name: string;
+  series: string;
   printedTotal: number;
+  total: number;
+  legalities: ILegality;
   ptcgoCode: string;
   releaseDate: string;
-  series:  string;
-  total: number;
   updatedAt: string;
+  images: SetImage;
 }

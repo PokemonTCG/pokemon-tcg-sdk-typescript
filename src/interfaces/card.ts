@@ -7,13 +7,18 @@ import { ILegality } from './legality';
 import { Set } from './set';
 import { TCGPlayer } from './tcgplayer';
 
+import { Type } from '../enums/type';
+import { Supertype } from '../enums/supertype';
+import { Subtype } from '../enums/subtype';
+import { Rarity } from '../enums/rarity';
+
 export interface Card {
   id: string;
   name: string;
-  supertype: string;
-  subtypes: string[];
+  supertype: Supertype;
+  subtypes: Subtype[];
   hp?: string;
-  types?: string[];
+  types?: Type[];
   evolesFrom?: string;
   evolvesTo?: string[];
   rules?: string[];
@@ -27,7 +32,7 @@ export interface Card {
   set: Set;
   number: string;
   artist?: string;
-  rarity: string;
+  rarity: Rarity;
   flavorText?: string;
   nationalPokedexNumbers?: number[];
   legalities: ILegality;

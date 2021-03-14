@@ -1,4 +1,4 @@
-export enum Subtypes {
+export enum Subtype {
     Break = "BREAK",
     Baby = "Baby",
     Basic = "Basic",

@@ -1,4 +1,4 @@
-export enum Types {
+export enum Type {
     Colorless = "Colorless",
     Darkness = "Darkness",
     Dragon = "Dragon",

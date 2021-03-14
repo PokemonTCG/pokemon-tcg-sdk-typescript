@@ -1,4 +1,4 @@
-export enum Rarities {
+export enum Rarity {
     AmazingRare = "Amazing Rare",
     Common = "Common",
     Legend = "LEGEND",

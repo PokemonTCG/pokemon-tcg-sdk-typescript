@@ -1,4 +1,4 @@
-export enum Parameters {
+export enum Parameter {
     Query = "q",
     Page = "page",
     PageSize = "pageSize",

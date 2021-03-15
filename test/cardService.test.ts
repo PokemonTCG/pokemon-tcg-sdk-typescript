@@ -32,15 +32,13 @@ describe('Card Service', () => {
         const result: Supertype[] = await getSupertypes();
 
         expect(expected.sort()).toEqual(result.sort());
-
     });
 
     it('should get a list of card subtypes', async () => {
         const expected: string[] = Object.values(Subtype);
         const result: Subtype[] = await getSubtypes();
-        console.log(expected);
-        expect(expected.sort()).toEqual(result.sort());
 
+        expect(expected.sort()).toEqual(result.sort());
     });
 
     it('should get a list of card rarities', async () => {
@@ -48,7 +46,6 @@ describe('Card Service', () => {
         const result: Rarity[] = await getRarities();
 
         expect(expected.sort()).toEqual(result.sort());
-
     });
 
     it('should get a list of card types', async () => {
@@ -56,6 +53,5 @@ describe('Card Service', () => {
         const result: Type[] = await getTypes();
 
         expect(expected.sort()).toEqual(result.sort());
-
     });
 })

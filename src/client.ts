@@ -46,19 +46,18 @@ export class Client {
       .catch(error => Promise.reject(error));
   }
 
-  private paramsToQuery(params?: Query[]): string {
+  private paramsToQuery(params: Query[]): string {
     let query: string = '';
     const paramsLength: number = params.length;
 
-    if (params) {
-        params.map((q: Query, i: number) => {
-          if (paramsLength === i + 1) {
-            query += `${q.name}:${encodeURIComponent(q.value.toString())}`;
-          } else {
-            query += `${q.name}:${encodeURIComponent(q.value.toString())}`.concat('&');
-          }
-        });
+    params.map((q: Query, i: number) => {
+      if (paramsLength === i + 1) {
+        query += `${q.name}:${encodeURIComponent(q.value.toString())}`;
+      } else {
+        query += `${q.name}:${encodeURIComponent(q.value.toString())}`.concat('&');
       }
+    });
+
     return query;
   }
 }

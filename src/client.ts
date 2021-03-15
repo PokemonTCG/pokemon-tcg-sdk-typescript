@@ -11,7 +11,7 @@ export class Client {
 
   private constructor() {}
 
-  public static getInstance() {
+  public static getInstance(): Client {
       if (!Client.instance) {
           Client.instance = new Client();
       }

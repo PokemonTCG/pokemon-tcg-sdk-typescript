@@ -6,7 +6,7 @@ export enum Type {
     Fighting = "Fighting",
     Fire = "Fire",
     Grass = "Grass",
-    Lightening = "Lightening",
+    Lightening = "Lightning",
     Metal = "Metal",
     Psychic = "Psychic",
     Water = "Water"

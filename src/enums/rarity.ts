@@ -14,7 +14,7 @@ export enum Rarity {
     RareHoloV = "Rare Holo V",
     RareHoloVMAX = "Rare Holo VMAX",
     RarePrime = "Rare Prime",
-    RarePrimeStar = "Rare Prime Star",
+    RarePrimeStar = "Rare Prism Star",
     RareRainbow = "Rare Rainbow",
     RareSecret = "Rare Secret",
     RareShining = "Rare Shining",

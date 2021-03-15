@@ -37,7 +37,7 @@ export class Client {
       if (params.toLowerCase().includes('page') || params.toLowerCase().includes('order')) url += `?${params}`;
       else url += `/${params}`;
     }
-    else url += `?q=${this.paramsToQuery(params)}`;
+    else if (params) url += `?q=${this.paramsToQuery(params)}`;
 
     return axios.default.get<T>(url, config)
       .then(response => {

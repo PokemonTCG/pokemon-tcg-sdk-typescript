@@ -22,9 +22,6 @@ jobs:
       - name: 'Install dependencies'
         run: 'npm i'
 
-      - name: 'Lint'
-        run: 'npm run lint'
-
       - name: 'Test SDK'
         run: 'npm run test'
 

@@ -1,5 +1,5 @@
-export interface IAbility {
-  name: string;
-  text: string;
-  type: string;
+export interface Ability {
+    name: string;
+    text: string;
+    type: string;
 }

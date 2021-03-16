@@ -1,9 +1,9 @@
-export interface ISetImage {
-  symbol: string;
-  logo: string;
+export interface SetImage {
+    symbol: string;
+    logo: string;
 }
 
-export interface ICardImage {
-  small: string;
-  large: string;
+export interface CardImage {
+    small: string;
+    large: string;
 }

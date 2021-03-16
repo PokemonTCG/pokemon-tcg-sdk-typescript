@@ -1,37 +1,71 @@
 import * as axios from 'axios';
-import { API_URL, API_VERSION } from './sdk';
-import { IQuery } from './interfaces/query';
+import { Query } from './interfaces/query';
 
 export class Client {
-  static apiUrl: string = `${API_URL}/v${API_VERSION}`;
+    private readonly POKEMONTCG_API_BASE_URL: string =
+        'https://api.pokemontcg.io';
+    private readonly POKEMONTCG_API_VERSION: string = '2';
+    private readonly POKEMONTCG_API_URL: string = `${this.POKEMONTCG_API_BASE_URL}/v${this.POKEMONTCG_API_VERSION}`;
+    private readonly POKEMONTCG_API_KEY?: string =
+        process.env.POKEMONTCG_API_KEY;
 
-  static async get(resource: string, params?: IQuery[] | string): Promise<any> {
-    let url: string = `${this.apiUrl}/${resource}`;
-    const config: axios.AxiosRequestConfig = {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    };
+    private static instance: Client;
 
-    if(typeof params === 'string') url += `/${params}`;
-    else url += `?${this.paramsToQuery(params)}`;
+    private constructor() {}
 
-    return axios.default.get<any>(url, config)
-      .then(response => {
-        return response.data[Object.keys(response.data)[0]];
-      })
-      .catch(error => Promise.reject(error));
-  }
+    public static getInstance(): Client {
+        if (!Client.instance) {
+            Client.instance = new Client();
+        }
 
-  private static paramsToQuery(params?: IQuery[]): string {
-    let query: string = '';
-
-    if (params) {
-      params.map((q: IQuery) => {
-        query += `${q.name}=${encodeURIComponent(q.value.toString())}`.concat('&');
-      });
+        return Client.instance;
     }
 
-    return query;
-  }
+    async get<T>(resource: string, params?: Query[] | string): Promise<T> {
+        let url = `${this.POKEMONTCG_API_URL}/${resource}`;
+        const headers = {
+            'Content-Type': 'application/json',
+        };
+
+        if (this.POKEMONTCG_API_KEY) {
+            headers['X-Api-Key'] = this.POKEMONTCG_API_KEY;
+        }
+
+        const config: axios.AxiosRequestConfig = {
+            headers,
+        };
+
+        if (typeof params === 'string') {
+            if (
+                params.toLowerCase().includes('page') ||
+                params.toLowerCase().includes('order')
+            )
+                url += `?${params}`;
+            else url += `/${params}`;
+        } else if (params) url += `?q=${this.paramsToQuery(params)}`;
+
+        return axios.default
+            .get<T>(url, config)
+            .then((response) => {
+                return response.data[Object.keys(response.data)[0]];
+            })
+            .catch((error) => Promise.reject(error));
+    }
+
+    private paramsToQuery(params: Query[]): string {
+        let query = '';
+        const paramsLength: number = params.length;
+
+        params.map((q: Query, i: number) => {
+            if (paramsLength === i + 1) {
+                query += `${q.name}:${encodeURIComponent(q.value.toString())}`;
+            } else {
+                query += `${q.name}:${encodeURIComponent(
+                    q.value.toString()
+                )}`.concat('&');
+            }
+        });
+
+        return query;
+    }
 }

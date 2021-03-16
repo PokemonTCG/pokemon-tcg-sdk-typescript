@@ -1,4 +1,4 @@
-export interface Query {
-    name: string;
-    value: string | number;
+export interface IQuery {
+  name: string;
+  value: string | number;
 }

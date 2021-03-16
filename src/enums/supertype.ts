@@ -1,5 +1,5 @@
 export enum Supertype {
-    Energy = "Energy",
-    Pokemon = "Pokémon",
-    Trainer = "Trainer"
+    Energy = 'Energy',
+    Pokemon = 'Pokémon',
+    Trainer = 'Trainer',
 }

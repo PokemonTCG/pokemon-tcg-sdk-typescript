@@ -1,4 +1,4 @@
 export interface AncientTrait {
-  name: string;
-  text: string;
+    name: string;
+    text: string;
 }

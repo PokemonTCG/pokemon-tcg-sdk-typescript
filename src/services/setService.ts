@@ -1,6 +1,6 @@
-import { Query } from "../interfaces/query";
-import { Set } from "../interfaces/set";
-import { Client } from "../client";
+import { Query } from '../interfaces/query';
+import { Set } from '../interfaces/set';
+import { Client } from '../client';
 
 export async function findSetByID(id: string): Promise<Set> {
     const client: Client = Client.getInstance();
@@ -15,7 +15,7 @@ export async function findSetsByQueries(params: Query[]): Promise<Set[]> {
 }
 
 export async function getAllSets(): Promise<Set[]> {
-    const param: string = 'pageSize:250'
+    const param = 'pageSize:250';
 
     const client: Client = Client.getInstance();
     const response: Set[] = await client.get<Set[]>('sets', param);

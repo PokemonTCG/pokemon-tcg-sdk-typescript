@@ -1,5 +1,5 @@
 export interface Ability {
-  name: string;
-  text: string;
-  type: string;
+    name: string;
+    text: string;
+    type: string;
 }

@@ -5,6 +5,13 @@ export * from './interfaces/card';
 export * from './interfaces/query';
 export * from './interfaces/stats';
 
-// services
+// Enums
+export * from './enums/type';
+export * from './enums/supertype';
+export * from './enums/subtype';
+export * from './enums/rarity';
+export * from './enums/parameter';
+
+// Services
 export * from './services/cardService';
 export * from './services/setService';

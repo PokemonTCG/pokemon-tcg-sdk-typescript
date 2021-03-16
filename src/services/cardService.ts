@@ -1,10 +1,10 @@
-import { Query } from "../interfaces/query";
-import { Card } from "../interfaces/card";
+import { Query } from '../interfaces/query';
+import { Card } from '../interfaces/card';
 import { Type } from '../enums/type';
 import { Supertype } from '../enums/supertype';
 import { Subtype } from '../enums/subtype';
 import { Rarity } from '../enums/rarity';
-import { Client } from "../client";
+import { Client } from '../client';
 
 export async function findCardByID(id: string): Promise<Card> {
     const client: Client = Client.getInstance();
@@ -19,7 +19,7 @@ export async function findCardsByQueries(params: Query[]): Promise<Card[]> {
 }
 
 export async function getAllCards(): Promise<Card[]> {
-    const param: string = 'pageSize:250'
+    const param = 'pageSize:250';
 
     const client: Client = Client.getInstance();
     const response: Card[] = await client.get<Card[]>('cards', param);

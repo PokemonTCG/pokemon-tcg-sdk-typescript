@@ -1,0 +1,32 @@
+name: Pokemon TCG TypeScript SDK Test
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  test:
+    name: Pokemon TCG TypeScript Integration Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v1
+
+      - name: 'Setup Node'
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: 'Install dependencies'
+        run: 'npm i'
+
+      - name: 'Lint'
+        run: 'npm run lint'
+
+      - name: 'Test SDK'
+        run: 'npm run test'
+
+      - name: 'Build SDK'
+        run: 'npm run build'

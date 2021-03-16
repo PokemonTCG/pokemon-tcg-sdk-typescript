@@ -1,10 +1,10 @@
 export enum Legality {
-  LEGAL = 'Legal',
-  BANNED = 'Banned',
+    Legal = 'Legal',
+    Banned = 'Banned',
 }
 
 export interface ILegality {
-  expanded: Legality | undefined
-  standard: Legality | undefined
-  unlimited: Legality | undefined
+    expanded?: Legality;
+    standard?: Legality;
+    unlimited?: Legality;
 }

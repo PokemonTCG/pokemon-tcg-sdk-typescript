@@ -1,5 +1,5 @@
 import * as axios from 'axios';
-import { Query } from './interfaces/query';
+import { Parameter } from './interfaces/parameter';
 
 export class Client {
     private readonly POKEMONTCG_API_BASE_URL: string =
@@ -21,7 +21,7 @@ export class Client {
         return Client.instance;
     }
 
-    async get<T>(resource: string, params?: Query[] | string): Promise<T> {
+    async get<T>(resource: string, params?: Parameter | string): Promise<T> {
         let url = `${this.POKEMONTCG_API_URL}/${resource}`;
         const headers = {
             'Content-Type': 'application/json',
@@ -36,13 +36,10 @@ export class Client {
         };
 
         if (typeof params === 'string') {
-            if (
-                params.toLowerCase().includes('page') ||
-                params.toLowerCase().includes('order')
-            )
-                url += `?${params}`;
-            else url += `/${params}`;
-        } else if (params) url += `?q=${this.paramsToQuery(params)}`;
+            url += `/${params}`;
+        } else if (params) {
+            url += `?${this.stringify(params)}`;
+        }
 
         return axios.default
             .get<T>(url, config)
@@ -52,20 +49,16 @@ export class Client {
             .catch((error) => Promise.reject(error));
     }
 
-    private paramsToQuery(params: Query[]): string {
-        let query = '';
-        const paramsLength: number = params.length;
+    private stringify(params: Parameter): string {
+        const queryString = Object.keys(params)
+            .map(
+                (key: string) =>
+                    `${encodeURIComponent(key)}=${encodeURIComponent(
+                        params[key]
+                    )}`
+            )
+            .join('&');
 
-        params.map((q: Query, i: number) => {
-            if (paramsLength === i + 1) {
-                query += `${q.name}:${encodeURIComponent(q.value.toString())}`;
-            } else {
-                query += `${q.name}:${encodeURIComponent(
-                    q.value.toString()
-                )}`.concat('&');
-            }
-        });
-
-        return query;
+        return queryString;
     }
 }

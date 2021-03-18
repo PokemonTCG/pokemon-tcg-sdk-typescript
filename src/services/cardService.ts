@@ -1,4 +1,4 @@
-import { Query } from '../interfaces/query';
+import { Parameter } from '../interfaces/parameter';
 import { Card } from '../interfaces/card';
 import { Type } from '../enums/type';
 import { Supertype } from '../enums/supertype';
@@ -12,17 +12,16 @@ export async function findCardByID(id: string): Promise<Card> {
     return response;
 }
 
-export async function findCardsByQueries(params: Query[]): Promise<Card[]> {
+export async function findCardsByQueries(params: Parameter): Promise<Card[]> {
     const client: Client = Client.getInstance();
     const response: Card[] = await client.get<Card[]>('cards', params);
     return response;
 }
 
 export async function getAllCards(): Promise<Card[]> {
-    const param = 'pageSize:250';
-
+    const params: Parameter = { pageSize: 250 };
     const client: Client = Client.getInstance();
-    const response: Card[] = await client.get<Card[]>('cards', param);
+    const response: Card[] = await client.get<Card[]>('cards', params);
     return response;
 }
 

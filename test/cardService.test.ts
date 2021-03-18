@@ -1,5 +1,5 @@
 import { findCardByID, findCardsByQueries, getAllCards, getSupertypes, getSubtypes, getTypes, getRarities } from "../src/services/cardService";
-import { Query } from "../src/interfaces/query";
+import { Parameter } from "../src/interfaces/parameter";
 import { Card } from "../src/interfaces/card";
 import { Type } from '../src/enums/type';
 import { Supertype } from '../src/enums/supertype';
@@ -8,10 +8,7 @@ import { Rarity } from '../src/enums/rarity';
 
 describe('Card Service', () => {
     it('should get a single card using query parameters', async () => {
-        const params: Query[] = [{
-            name: 'id',
-            value: 'xy7-54'
-        }]
+        const params: Parameter = { q: 'id:xy7-54' }
 
         const result: Card[] = await findCardsByQueries(params);
         expect(result[0].name).toEqual('Gardevoir');

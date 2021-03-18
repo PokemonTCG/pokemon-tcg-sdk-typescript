@@ -1,13 +1,10 @@
 import { findSetByID, findSetsByQueries, getAllSets } from '../src/services/setService';
-import { Query } from "../src/interfaces/query";
+import { Parameter } from "../src/interfaces/parameter";
 import { Set } from "../src/interfaces/set";
 
 describe('Set Service', () => {
     it('should get a single set using query parameters', async () => {
-        const params: Query[] = [{
-            name: 'name',
-            value: 'Base'
-        }];
+        const params: Parameter = { q: 'name:Base' };
 
         const result: Set[] = await findSetsByQueries(params);
         expect(result[0].name).toEqual('Base');

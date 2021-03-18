@@ -1,20 +1,86 @@
-# Pokemon TCG SDK TypeScript
+# Pokeemon TCG SDK TypeScript
 
-This is the TypeScript SDK for the [Pokemon TCG API](https://pokemontcg.io).
+*Now supporting Version 2 of the Pokémon TCG API! Please refer to the [V1 to V2 Migration](https://docs.pokemontcg.io/#documentationmigration) section of the 
+official API docs for more information.*
+
+[![pokemontcg-developers on discord](https://img.shields.io/badge/discord-pokemontcg--developers-738bd7.svg)](https://discord.gg/dpsTCvg)
+![pokemon-tcg-sdk-typescript build status](https://github.com/acupoftee/pokemon-tcg-sdk-typescript/actions/workflows/sdk_test.yaml/badge.svg
+)
+
+This is the TypeScript SDK for the [Pokémon Trading Card Game API](https://docs.pokemontcg.io).
 
 ## Installation
 
 **npm**
 
-    npm install --save pokemon-tcg-sdk-typescript
+    npm install pokemon-tcg-sdk-typescript
 
 **yarn**
 
     yarn add pokemon-tcg-sdk-typescript
 
-## Class Definitions
+# Configuration
+The SDK works out of the box! Simply import the SDK, and you're ready to go:
+```typescript
+import PokemonTCG from 'pokemon-tcg-sdk-typescript';
 
-### Card
+PokemonTCG.findCardByID('xy7-54').then((card: PokemonTCG.Card) => {
+    console.log(card.name) // Gardevoir
+})
+```
+
+It is recommended to use an API key for version 2 of the API. An API key unlocks higher race limits, and can 
+be adjusted to meet your needs if necessary. Create an account at https://dev.pokemontcg.io to grab an API key.
+
+To use the SDK with an API key, set your API key to the environment variable `POKEMONTCG_API_KEY` in a `.env` file. 
+
+# Usage
+
+## Card methods
+* findCardByID()
+* findCardsByQueries()
+* getAllCards()
+* getTypes()
+* getSupertypes()
+* getSubtypes()
+* getRarities()
+
+## Set methods
+* findSetByID()
+* findSetsByQueries()
+* getAllSets()
+
+### findCardByID()
+Returns a single Pokémon card given an ID. 
+```typescript
+import PokemonTCG from 'pokemon-tcg-sdk-typescript';
+
+PokemonTCG.findCardByID('xy7-54').then((card: PokemonTCG.Card) => {
+    console.log(card.name) // Gardevoir
+})
+```
+
+### findCardByQueries()
+Returns an array of cards filtered through a search query.
+```typescript
+import PokemonTCG from 'pokemon-tcg-sdk-typescript';
+
+const params: PokemonTCG.Query[] = [{
+   name: 'id',
+   value: 'xy7-54'
+}]
+
+PokemonTCG.findCardsByQueries(params).then((cards: PokemonTCG.Card[]) => {
+   console.log(card[0].name) // Gardevoir
+})
+```
+### getAllCards()
+Returns all Pokémon cards available through recursive pagination
+```typescript
+import PokemonTCG from 'pokemon-tcg-sdk-typescript';
+
+PokemonTCG.getAllCards();
+```
 
 ```typescript
 ability: IAbility;
@@ -152,5 +218,3 @@ PokemonTCG.Card.all()
  * Push to the branch (git push origin my-new-feature)
  * Create a new Pull Request
 
-## TODO
-* Add more testing?

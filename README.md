@@ -1,4 +1,4 @@
-# Pokeemon TCG SDK TypeScript
+# Pokémon TCG TypeScript SDK
 
 *Now supporting Version 2 of the Pokémon TCG API! Please refer to the [V1 to V2 Migration](https://docs.pokemontcg.io/#documentationmigration) section of the 
 official API docs for more information.*
@@ -157,5 +157,5 @@ Raring to code your heart out? Awesome! Here's how to get started:
    1. Create a link with `npm` or `yarn` (depending on what tool you installed this SDK with)
    2. In your project that uses the SDK, install the linked package with `yarn/npm link pokemon-tcg-sdk-typescript`
    3. Verify the SDK behaves as expected, and your changes took effect
-8. Submit a [pull request](https://github.com/PokemonTCG/pokemon-tcg-sdk-typescript/compare). 
+8. Submit a [pull request](https://github.com/PokemonTCG/pokemon-tcg-sdk-typescript/compare)! 🎉
 

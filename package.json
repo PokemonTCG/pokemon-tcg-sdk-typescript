@@ -11,11 +11,11 @@
     "SDK"
   ],
   "scripts": {
-    "format": "prettier --config .prettierrc.json 'src/**/*.ts' --write",
+    "prettier": "prettier --config .prettierrc.json 'src/**/*.ts' --write",
     "lint": "eslint . --ext .ts",
-    "lint-and-fix": "eslint . --ext .ts --fix",
-    "test": "jest",
-    "build": "tsc"
+    "lint:fix": "eslint . --ext .ts --fix",
+    "test": "npm run lint && jest",
+    "build": "npm run lint:fix && tsc"
   },
   "repository": {
     "type": "git",

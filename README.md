@@ -117,8 +117,8 @@ Returns a single Pokémon card given an ID.
 ```typescript
 import { PokemonTCG } from 'pokemon-tcg-sdk-typescript';
 
-PokemonTCG.findSetByID('xy7-54').then((card: PokemonTCG.Set) => {
-    console.log(card.name) // Gardevoir
+PokemonTCG.findSetByID('base1').then((set: PokemonTCG.Set) => {
+    console.log(set.name) // Base
 });
 ```
 
@@ -127,14 +127,14 @@ Returns an array of cards filtered through a search query.
 ```typescript
 import { PokemonTCG } from 'pokemon-tcg-sdk-typescript';
 
-const params: PokemonTCG.Query[] = { q: 'id:xy7-54' };
+const params: PokemonTCG.Query[] = { q: 'name:Base' };
 
-PokemonTCG.findSetsByQueries(params).then((cards: PokemonTCG.Set[]) => {
-   console.log(card[0].name) // Gardevoir
+PokemonTCG.findSetsByQueries(params).then((sets: PokemonTCG.Set[]) => {
+   console.log(sets[0].name) // Base
 });
 ```
 ### getAllSets()
-Returns all Pokémon cards available through recursive pagination.
+Returns all Pokémon sets available through recursive pagination.
 ```typescript
 import { PokemonTCG } from 'pokemon-tcg-sdk-typescript';
 

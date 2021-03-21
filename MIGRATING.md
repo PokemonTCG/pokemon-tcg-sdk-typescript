@@ -26,6 +26,9 @@ thoroughly for developers.
 
 There is no change in the function return types, nor underlying functionality. Functions will continue to return a generic promised based on the resource (i.e. `Promise<Card>`, `Promise<Set>`).
 
+It is recommended to refactor the function names with the find-and-replace tool in your IDE or text editor in order for your project
+to be compatible with V2 of the SDK. 
+
 ## Card Functions
 ###`PokemonTCG.Card.all()` -> `PokemonTCG.getAllCards()`
 ```typescript

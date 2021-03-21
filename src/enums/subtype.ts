@@ -22,4 +22,6 @@ export enum Subtype {
     TechnicalMachine = 'Technical Machine',
     V = 'V',
     VMax = 'VMAX',
+    RapidStrike = 'Rapid Strike',
+    SingleStrike = 'Single Strike'
 }

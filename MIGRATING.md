@@ -30,7 +30,7 @@ It is recommended to refactor the function names with the find-and-replace tool 
 to be compatible with V2 of the SDK. 
 
 ## Card Functions
-###`PokemonTCG.Card.all()` -> `PokemonTCG.getAllCards()`
+### `PokemonTCG.Card.all()` -> `PokemonTCG.getAllCards()`
 ```typescript
 import { PokemonTCG } from 'pokemon-tcg-sdk-typescript';
 
@@ -41,7 +41,7 @@ PokemonTCG.Card.all();
 PokemonTCG.getAllCards();
 ```
 
-###`PokemonTCG.Card.find()` -> `PokemonTCG.findCardByID()`
+### `PokemonTCG.Card.find()` -> `PokemonTCG.findCardByID()`
 ```typescript
 import { PokemonTCG } from 'pokemon-tcg-sdk-typescript';
 
@@ -56,7 +56,7 @@ PokemonTCG.findCardByID('xy7-54').then((card: PokemonTCG.Card) => {
 });
 ```
 
-###`PokemonTCG.Card.where()` -> `PokemonTCG.findCardsByQueries()`
+### `PokemonTCG.Card.where()` -> `PokemonTCG.findCardsByQueries()`
 ```typescript
 import { PokemonTCG } from 'pokemon-tcg-sdk-typescript';
 
@@ -75,7 +75,7 @@ PokemonTCG.findCardsByQueries(paramsV2).then((cards: PokemonTCG.Card[]) => {
 });
 ```
 ## Set Functions
-###`PokemonTCG.Set.all()` -> `PokemonTCG.getAllSets()`
+### `PokemonTCG.Set.all()` -> `PokemonTCG.getAllSets()`
 ```typescript
 import { PokemonTCG } from 'pokemon-tcg-sdk-typescript';
 
@@ -85,7 +85,7 @@ PokemonTCG.Set.all();
 // V2
 PokemonTCG.getAllSets();
 ```
-###`PokemonTCG.Set.find()` -> `PokemonTCG.findSetByID()`
+### `PokemonTCG.Set.find()` -> `PokemonTCG.findSetByID()`
 ```typescript
 import { PokemonTCG } from 'pokemon-tcg-sdk-typescript';
 
@@ -100,7 +100,7 @@ PokemonTCG.findSetByID('base1').then((set: PokemonTCG.Set) => {
 });
 ```
 
-###`PokemonTCG.Set.where()` -> `PokemonTCG.findSetsByQueries()`
+### `PokemonTCG.Set.where()` -> `PokemonTCG.findSetsByQueries()`
 ```typescript
 import { PokemonTCG } from 'pokemon-tcg-sdk-typescript';
 

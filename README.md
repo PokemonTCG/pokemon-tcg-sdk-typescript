@@ -3,6 +3,8 @@
 *Now supporting Version 2 of the Pokémon TCG API! Please refer to the [V1 to V2 Migration](https://docs.pokemontcg.io/#documentationmigration) section of the 
 official API docs for more information.*
 
+***See the [migration guide](MIGRATING.md) for steps to update your app to use the latest supported version of the SDK***
+
 [![pokemontcg-developers on discord](https://img.shields.io/badge/discord-pokemontcg--developers-738bd7.svg)](https://discord.gg/dpsTCvg)
 ![pokemon-tcg-sdk-typescript build status](https://github.com/acupoftee/pokemon-tcg-sdk-typescript/actions/workflows/sdk_test.yaml/badge.svg
 )

@@ -7,11 +7,16 @@ export class Client {
 
   static async get(resource: string, params?: IQuery[] | string): Promise<any> {
     let url: string = `${this.apiUrl}/${resource}`;
+    const POKEMONTCG_API_KEY  = process.env.POKEMONTCG_API_KEY;
     const config: axios.AxiosRequestConfig = {
       headers: {
         'Content-Type': 'application/json'
       }
     };
+
+    if (POKEMONTCG_API_KEY) {
+      config.headers['X-Api-Key'] = POKEMONTCG_API_KEY;
+  }
 
     if(typeof params === 'string') url += `/${params}`;
     else url += `?${this.paramsToQuery(params)}`;

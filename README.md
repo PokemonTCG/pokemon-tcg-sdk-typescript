@@ -20,30 +20,31 @@ Version 1 of this SDK is officially depricated. Version 2 stable release this SD
 ### Card
 
 ```typescript
-ability: IAbility;
-ancientTrait?: IAncientTrait;
-artist: string;
-attacks: IAttack[];
-convertedRetreatCost: number;
-evolvesFrom: string;
-hp: string;
-id: string;
-imageUrl: string;
-imageUrlHiRes: string;
-name: string;
-nationalPokedexNumber: number;
-number: string;
-rarity: string;
-resistances: IResistance[];
-retreatCost: string[];
-series: string;
-set: string;
-setCode: string;
-subtype: string;
-supertype: string;
-text: string[];
-types: string[];
-weaknesses: IWeakness[];
+  id: string;
+  name: string;
+  supertype: string;
+  subtypes: string[];
+  hp?: string;
+  types?: string[];
+  evolesFrom?: string;
+  evolvesTo?: string[];
+  rules?: string[];
+  ancientTrait?: IAncientTrait;
+  abilities?: IAbility[];
+  attacks?: IAttack[];
+  weaknesses?: IWeakness[];
+  resistances?: IResistance[];
+  retreatCost?: string[];
+  convertedRetreatCost?: number;
+  set: ISet;
+  number: string;
+  artist?: string;
+  rarity: string;
+  flavorText?: string;
+  nationalPokedexNumbers?: number[];
+  legalities: ILegality;
+  images: ICardImage;
+  tcgplayer?: ITCGPlayer;
 ```
 
 ### IAbility
@@ -74,17 +75,16 @@ value: string;
 ### Set
 
 ```typescript
-code: string;
-expandedLegal: boolean;
-logoUrl: string;
-name: string;
-ptcgoCode: string;
-releaseDate: string;
-series: string;
-standardLegal: boolean;
-symbolUrl: string;
-totalCards: number;
-updatedAt: string;
+  id: string;
+  images: ISetImage;
+  legalities: ILegality;
+  name:  string;
+  printedTotal: number;
+  ptcgoCode: string;
+  releaseDate: string;
+  series:  string;
+  total: number;
+  updatedAt: string;
 ```
 
 ### IQuery

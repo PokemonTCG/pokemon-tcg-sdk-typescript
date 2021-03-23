@@ -15,6 +15,10 @@ Version 1 of this SDK is officially depricated. Version 2 stable release this SD
 
     yarn add pokemon-tcg-sdk-typescript
 
+It is recommended to use an API key for version 2 of the API. By default, requests are limited to 20,000/day. Requests are rate limited to 1000 requests a day, and a maximum of 30 per minute.
+
+To use the SDK with an API key, create an account at https://dev.pokemontcg.io to grab an API key. Then set your API key to the environment variable POKEMONTCG_API_KEY in a .env file. Make sure to use this exact environment variable, otherwise the SDK will not be able to read the API key.
+
 ## Class Definitions
 
 ### Card

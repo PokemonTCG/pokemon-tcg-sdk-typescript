@@ -42,6 +42,9 @@ export class Card implements ICard {
     return "cards";
   }
 
+  /**
+   * @deprecated `Card.find` is renamed to `findCardById` in version 2. See the **[migration guide](https://github.com/acupoftee/pokemon-tcg-sdk-typescript/blob/master/MIGRATING.md)** for more info.
+   */
   static async find(id: string): Promise<Card> {
     return QueryBuilder.find(this, id)
       .then((response) => {
@@ -50,6 +53,9 @@ export class Card implements ICard {
       .catch((error) => Promise.reject(error));
   }
 
+  /**
+   * @deprecated `Card.all` is renamed to `getAllCards` in version 2. See the **[migration guide](https://github.com/acupoftee/pokemon-tcg-sdk-typescript/blob/master/MIGRATING.md)** for more info.
+   */
   static async all(): Promise<Card[]> {
     return QueryBuilder.all(this)
       .then((response) => {
@@ -58,6 +64,9 @@ export class Card implements ICard {
       .catch((error) => Promise.reject(error));
   }
 
+  /**
+   * @deprecated `Card.where` is renamed to `findCardsByQueries` in version 2. See the **[migration guide](https://github.com/acupoftee/pokemon-tcg-sdk-typescript/blob/master/MIGRATING.md)** for more info.
+   */
   static async where(params: IQuery[]): Promise<Card[]> {
     return QueryBuilder.where(this, params)
       .then((response) => {

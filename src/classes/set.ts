@@ -20,6 +20,9 @@ export class Set implements ISet {
     return 'sets';
   }
 
+  /**
+   * @deprecated `Set.find` is renamed to `findSetById` in version 2. See the **[migration guide](https://github.com/acupoftee/pokemon-tcg-sdk-typescript/blob/master/MIGRATING.md)** for more info.
+   */
   static async find(id: string): Promise<Set> {
     return QueryBuilder.find(this, id)
       .then(response => {
@@ -28,6 +31,9 @@ export class Set implements ISet {
       .catch(error => Promise.reject(error));
   }
 
+  /**
+   * @deprecated `Set.all` is renamed to `getAllSets` in version 2. See the **[migration guide](https://github.com/acupoftee/pokemon-tcg-sdk-typescript/blob/master/MIGRATING.md)** for more info.
+   */
   static async all(): Promise<Set[]> {
     return QueryBuilder.all(this)
       .then(response => {
@@ -36,6 +42,9 @@ export class Set implements ISet {
       .catch(error => Promise.reject(error));
   }
 
+  /**
+   * @deprecated `Set.where` is renamed to `findSetsByQueries` in version 2. See the **[migration guide](https://github.com/acupoftee/pokemon-tcg-sdk-typescript/blob/master/MIGRATING.md)** for more info.
+   */
   static async where(params: IQuery[]): Promise<Set[]> {
     return QueryBuilder.where(this, params)
       .then(response => {

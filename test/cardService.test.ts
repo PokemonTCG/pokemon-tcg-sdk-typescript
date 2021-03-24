@@ -1,4 +1,4 @@
-import { findCardByID, findCardsByQueries, getAllCards, getSupertypes, getSubtypes, getTypes, getRarities } from "../src/services/cardService";
+import { findCardByID, findCardsByQueries, getSupertypes, getSubtypes, getTypes, getRarities } from "../src/services/cardService";
 import { Parameter } from "../src/interfaces/parameter";
 import { Card } from "../src/interfaces/card";
 import { Type } from '../src/enums/type';
@@ -19,9 +19,10 @@ describe('Card Service', () => {
         expect(result.name).toEqual('Gardevoir');
     })
 
-    it('should get a default list of cards using the cards resource with no query params', async () => {
-        const results: Card[] = await getAllCards();
-        expect(results).toHaveLength(250);
+    it('should get a maximum of 250 cards given a page number by default', async () => {
+        const totalCards = 250
+        const results: Card[] = await findCardsByQueries({ page: 1});
+        expect(results).toHaveLength(totalCards);
     });
 
     it('should get a list of card supertypes', async () => {

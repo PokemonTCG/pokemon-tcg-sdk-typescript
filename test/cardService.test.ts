@@ -20,8 +20,9 @@ describe('Card Service', () => {
     })
 
     it('should get a default list of cards using the cards resource with no query params', async () => {
+        const totalCards = 13438;
         const results: Card[] = await getAllCards();
-        expect(results).toHaveLength(250);
+        expect(results).toHaveLength(totalCards);
     });
 
     it('should get a list of card supertypes', async () => {

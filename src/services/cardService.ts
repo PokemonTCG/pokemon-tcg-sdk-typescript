@@ -6,6 +6,25 @@ import { Subtype } from '../enums/subtype';
 import { Rarity } from '../enums/rarity';
 import { Client } from '../client';
 
+async function paginateAllCards(pageNumber: number, params?: Parameter): Promise<Card[]> {
+    let currentPage = pageNumber;
+    const client: Client = Client.getInstance();
+    const response: Card[] = await client.get<Card[]>('cards', { ...params, pageSize: 250, page: currentPage });
+
+    if (response.length === 0) {
+        return response;
+    } else {
+        currentPage++;
+        return response.concat(await paginateAllCards(currentPage));
+    }
+}
+
+export async function getAllCards(params?: Parameter): Promise<Card[]> {
+    const startingPage = 1;
+    const response: Card[] = await paginateAllCards(startingPage, params);
+    return response;
+}
+
 export async function findCardByID(id: string): Promise<Card> {
     const client: Client = Client.getInstance();
     const response: Card = await client.get<Card>('cards', id);
@@ -13,13 +32,6 @@ export async function findCardByID(id: string): Promise<Card> {
 }
 
 export async function findCardsByQueries(params: Parameter): Promise<Card[]> {
-    const client: Client = Client.getInstance();
-    const response: Card[] = await client.get<Card[]>('cards', params);
-    return response;
-}
-
-export async function getAllCards(): Promise<Card[]> {
-    const params: Parameter = { pageSize: 250 };
     const client: Client = Client.getInstance();
     const response: Card[] = await client.get<Card[]>('cards', params);
     return response;

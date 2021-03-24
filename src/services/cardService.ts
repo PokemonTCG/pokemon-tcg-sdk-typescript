@@ -9,7 +9,7 @@ import { Client } from '../client';
 async function paginateAllCards(pageNumber: number, params?: Parameter): Promise<Card[]> {
     let currentPage = pageNumber;
     const client: Client = Client.getInstance();
-    const response: Card[] = await client.get<Card[]>('cards', { ...params, pageSize: 250, page: currentPage });
+    const response: Card[] = await client.get<Card[]>('cards', { pageSize: 250, page: currentPage, ...params });
 
     if (response.length === 0) {
         return response;

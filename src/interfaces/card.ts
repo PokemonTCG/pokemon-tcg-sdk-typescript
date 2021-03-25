@@ -15,7 +15,7 @@ export interface ICard {
   subtypes: string[];
   hp?: string;
   types?: string[];
-  evolesFrom?: string;
+  evolvesFrom?: string;
   evolvesTo?: string[];
   rules?: string[];
   ancientTrait?: IAncientTrait;

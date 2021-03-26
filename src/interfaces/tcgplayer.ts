@@ -5,6 +5,8 @@ export interface ITCGPlayer {
     normal: IPrice | undefined;
     holofoil: IPrice | undefined;
     reverseHolofoil: IPrice | undefined;
+    '1stEditionNormal': IPrice | undefined;
+    '1stEditionHolofoil': IPrice | undefined;
   }
 }
 

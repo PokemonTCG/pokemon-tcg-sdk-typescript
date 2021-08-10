@@ -3,6 +3,7 @@ import { IAncientTrait } from "../interfaces/ancientTrait";
 import { IAttack } from "../interfaces/attack";
 import { ICard } from "../interfaces/card";
 import { ICardImage } from "../interfaces/image";
+import { ICardmarket } from "../interfaces/cardmarket";
 import { ILegality } from "../interfaces/legality";
 import { IQuery } from "../interfaces/query";
 import { IResistance } from "../interfaces/resistance";
@@ -37,6 +38,7 @@ export class Card implements ICard {
   legalities: ILegality;
   images: ICardImage;
   tcgplayer?: ITCGPlayer;
+  cardmarket?: ICardmarket;
 
   resource(): string {
     return "cards";

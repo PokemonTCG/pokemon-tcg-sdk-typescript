@@ -49,6 +49,7 @@ To use the SDK with an API key, create an account at https://dev.pokemontcg.io t
   legalities: ILegality;
   images: ICardImage;
   tcgplayer?: ITCGPlayer;
+  cardmarket?: ICardmarket;
 ```
 
 ### IAbility

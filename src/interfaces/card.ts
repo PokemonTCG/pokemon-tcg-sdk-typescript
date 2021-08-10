@@ -4,6 +4,7 @@ import { IAttack } from "../interfaces/attack";
 import { IResistance } from "../interfaces/resistance";
 import { IWeakness } from "../interfaces/weakness";
 import { ICardImage } from "./image";
+import { ICardmarket } from "./cardmarket";
 import { ILegality } from "./legality";
 import { ISet } from "./set";
 import { ITCGPlayer } from "./tcgplayer";
@@ -34,4 +35,5 @@ export interface ICard {
   legalities: ILegality;
   images: ICardImage;
   tcgplayer?: ITCGPlayer;
+  cardmarket?: ICardmarket;
 }

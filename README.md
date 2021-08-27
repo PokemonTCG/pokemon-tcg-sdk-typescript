@@ -3,7 +3,7 @@
 This is the TypeScript SDK for the [Pokemon TCG API](https://pokemontcg.io).
 
 # V2 Announcement
-Version 1 of this SDK is officially depricated. Version 2 stable release this SDK is scheduled to be released on **Friday, April 3rd, 20201**. Version 1 will continue to receive support until then. **See the [migration guide](MIGRATING.md) for steps to update your app to use the latest supported version of the SDK**
+Version 1 of this SDK is officially depricated. Version 2 stable release this SDK is scheduled to be released on **Friday, September 17th, 20201**. Version 1 will continue to receive support until then. **See the [migration guide](MIGRATING.md) for steps to update your app to use the latest supported version of the SDK**
 
 ## Installation
 
@@ -148,17 +148,19 @@ PokemonTCG.Card.all()
 ```
 
 ## Contributing
- * Fork it (click the Fork button at the top of the page)
- * Create your feature branch (git checkout -b my-new-feature)
- * Make some changes and fix some bugs!
- * Run the tests `npm run-script test`
- * Test your changes in a project of yours:
-   * Create a link with [npm](https://docs.npmjs.com/cli/link.html) or [yarn](https://yarnpkg.com/lang/en/docs/cli/link/) (depending on what tool you installed this SDK with)
-   * In your project that **uses** the SDK, install the linked package with `yarn/npm link pokemon-tcg-sdk-typescript`
-   * Verify the SDK behaves as expected, and your changes took effect
- * Commit your changes (git commit -am 'Add some feature')
- * Push to the branch (git push origin my-new-feature)
- * Create a new Pull Request
+* Open an issue
+  * Describe what the SDK is missing and what changes you'd like to see implemented
+  * **Ask clarifying questions**
+* Fork it (click the Fork button at the top of the page)
+* Create your feature branch (git checkout -b my-new-feature)
+* Make some changes and fix some bugs!
+* Run the tests `npm run-script test`
+* Test your changes in a project of yours:
+  * Create a link with [npm](https://docs.npmjs.com/cli/link.html) or [yarn](https://yarnpkg.com/lang/en/docs/cli/link/) (depending on what tool you installed this SDK with)
+  * In your project that **uses** the SDK, install the linked package with `yarn/npm link pokemon-tcg-sdk-typescript`
+  * Verify the SDK behaves as expected, and your changes took effect
+* Commit your changes (git commit -am 'Add some feature')
+* Push to the branch (git push origin my-new-feature)
+* Create a new Pull Request
 
-## TODO
-* Add more testing?
+

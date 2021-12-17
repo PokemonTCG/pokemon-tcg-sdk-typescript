@@ -161,6 +161,6 @@ PokemonTCG.Card.all()
   * Verify the SDK behaves as expected, and your changes took effect
 * Commit your changes (git commit -am 'Add some feature')
 * Push to the branch (git push origin my-new-feature)
-* Create a new Pull Request
+* Create a new Pull Request to `master`
 
 

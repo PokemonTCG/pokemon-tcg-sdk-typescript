@@ -33,6 +33,7 @@ export interface ICard {
   flavorText?: string;
   nationalPokedexNumbers?: number[];
   legalities: ILegality;
+  regulationMark?: string;
   images: ICardImage;
   tcgplayer?: ITCGPlayer;
   cardmarket?: ICardmarket;

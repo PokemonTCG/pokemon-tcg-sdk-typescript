@@ -3,7 +3,7 @@
 This is the TypeScript SDK for the [Pokemon TCG API](https://pokemontcg.io).
 
 # V2 Announcement
-Version 1 of this SDK is officially deprecated. Version 2 stable release this SDK is scheduled to be released on **Friday, September 17th, 2021**. Version 1 will continue to receive support until then. **See the [migration guide](MIGRATING.md) for steps to update your app to use the latest supported version of the SDK**
+Version 1 of this SDK is officially deprecated. Version 2 stable release is scheduled to be released on **Friday, September 17th, 2021**. Version 1 will continue to receive support until then. **See the [migration guide](MIGRATING.md) for steps to update your app to use the latest supported version of the SDK**
 
 ## Installation
 

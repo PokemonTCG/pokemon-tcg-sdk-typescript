@@ -30,7 +30,7 @@ To use the SDK with an API key, create an account at https://dev.pokemontcg.io t
   subtypes: string[];
   hp?: string;
   types?: string[];
-  evolesFrom?: string;
+  evolvesFrom?: string;
   evolvesTo?: string[];
   rules?: string[];
   ancientTrait?: IAncientTrait;

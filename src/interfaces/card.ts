@@ -32,9 +32,10 @@ export interface Card {
     set: Set;
     number: string;
     artist?: string;
-    rarity: Rarity;
+    rarity?: Rarity;
     flavorText?: string;
     nationalPokedexNumbers?: number[];
+    regulationMark?: string;
     legalities: ILegality;
     images: CardImage;
     tcgplayer?: TCGPlayer;

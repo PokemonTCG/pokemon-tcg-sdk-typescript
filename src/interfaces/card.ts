@@ -29,7 +29,7 @@ export interface ICard {
   set: ISet;
   number: string;
   artist?: string;
-  rarity: string;
+  rarity?: string;
   flavorText?: string;
   nationalPokedexNumbers?: number[];
   legalities: ILegality;
